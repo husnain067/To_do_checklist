@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Splash screen</string>
+    <string name="toolbar_text">Today\'s \nChecklist</string>
+    <string name="xml_view">Task name</string>
+    <string name="add_info">Extra Info</string>
+    <string name="reminder">Reminder:</string>
+    <string name="note">Note:</string>
+    <string name="submit">Save</string>
+    <string name="time">Time:</string>
+    <string name="reminder_time">Reminder time:</string>
+    <string-array name="reminder_array">
+        <item>No</item>
+        <item>yes</item>
+    </string-array>
+    <string-array name="priorty_array">
+        <item>Low</item>
+        <item>Meduim</item>
+        <item>High</item>
+
+    </string-array>
+
+</resources>
