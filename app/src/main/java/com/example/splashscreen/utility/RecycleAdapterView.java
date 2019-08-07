@@ -49,10 +49,19 @@ public class RecycleAdapterView extends RecyclerView.Adapter<RecycleAdapterView.
         Log.d(TAG, "onBindViewHolder: called.");
         final Task_Details var = mText.get(position);
         holder.name.setText(var.getTaskName());
+        if (var.getPriorty()==0){
+            holder.priorty_check.setText("Low");
+            holder.cardView.setCardBackgroundColor(mContext.getColor(R.color.low_priorty));
+        }
+         if (var.getPriorty()==1){
+            holder.priorty_check.setText("Meduim");
+            holder.cardView.setCardBackgroundColor(mContext.getColor(R.color.meduim_priorty));
+        }
+         if (var.getPriorty()==2){
+            holder.priorty_check.setText("High");
+            holder.cardView.setCardBackgroundColor(mContext.getColor(R.color.high_priorty));
+        }
 
-
-       /* int mColor = Color.parseColor(String.valueOf(mContext.getColor(R.color.high_priorty)));
-        holder.cardView.setCardBackgroundColor(mColor);*/
 
 
     }
@@ -65,16 +74,17 @@ public class RecycleAdapterView extends RecyclerView.Adapter<RecycleAdapterView.
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView name;
-        ImageView imageView;
-        CardView cardView;
+      TextView priorty_check;
+      CardView cardView;
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             name = itemView.findViewById(R.id.pass_text);
-            imageView = itemView.findViewById(R.id.pass_image);
-            cardView = itemView.findViewById(R.id.pass_color);
+            priorty_check= itemView.findViewById(R.id.priorty_check);
+            cardView= itemView.findViewById(R.id.priorty_card);
+
 
 
         }

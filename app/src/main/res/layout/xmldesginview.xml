@@ -1,64 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/pass_color"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginRight="10dp"
         android:layout_marginBottom="5dp"
-        app:cardBackgroundColor="#ffffff"
-        android:id="@+id/pass_color">
+        app:cardBackgroundColor="#ffffff">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-
-                <ImageView
-
-                    android:layout_height="30dp"
-                    android:layout_width="30dp"
-                    android:layout_margin="5dp"
-                    android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"
-                    android:layout_gravity="center"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/square"
-                    android:id="@+id/pass_image"/>
-        <TextView
-            android:gravity="center_vertical"
-            android:background="@android:color/transparent"
-            android:id="@+id/pass_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:text="@string/xml_view"
-            android:textSize="20sp"
-            app:autoSizeTextType="uniform"
-            android:textColor="@android:color/background_dark"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp">
 
-            />
+
+            <ImageView
+                android:id="@+id/pass_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/square" />
+
+            <TextView
+
+                android:id="@+id/pass_text"
+                android:layout_width="270dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:text="@string/xml_view"
+                android:textColor="@android:color/background_dark"
+
+                android:textSize="16sp"
+
+                />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/priorty_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:cardCornerRadius="15dp">
+
+                <TextView
+                    android:id="@+id/priorty_check"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:hint="High"
+                    android:padding="2dp"
+                    android:textColor="@android:color/white" />
+            </androidx.cardview.widget.CardView>
+
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-
-
-
-
-
-
 
 
 </LinearLayout>

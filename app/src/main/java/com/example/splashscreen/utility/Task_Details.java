@@ -7,7 +7,7 @@ public class Task_Details {
 String taskName;
 int priorty;
 
-    public Task_Details(String taskName) {
+    public Task_Details(String taskName,int priorty) {
         this.taskName = taskName;
         this.priorty = priorty;
     }

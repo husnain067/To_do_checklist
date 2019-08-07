@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import static com.example.splashscreen.TodysChecklit_Activity.task_details;
+
 
 
 public class Add_New_Tasks extends AppCompatActivity {
@@ -46,6 +46,7 @@ public class Add_New_Tasks extends AppCompatActivity {
     Button submitBt;
     LinearLayout reminderLayout;
     TextView dateView;
+    public static int priorty;
 
 
     String newTask;
@@ -84,15 +85,16 @@ public class Add_New_Tasks extends AppCompatActivity {
 
                 Intent i = new Intent(Add_New_Tasks.this, TodysChecklit_Activity.class);
 
-               //submit_challengeList = Collections.singletonList(newTask);
+                //submit_challengeList = Collections.singletonList(newTask);
 
-               i.putExtra("STRING_I_NEED", newTask);
+                i.putExtra("STRING_I_NEED", newTask);
                 startActivity(i);
                 finish();
 
             }
         });
         reminder_spinner();
+        priorty_spinner();
     }
 
 
@@ -196,6 +198,7 @@ public class Add_New_Tasks extends AppCompatActivity {
             }
         });
     }
+
     private void priorty_spinner() {
         Spinner sp = (Spinner) findViewById(R.id.spinner_priorty);
         sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -205,14 +208,14 @@ public class Add_New_Tasks extends AppCompatActivity {
                 switch (position) {
 
                     case 0:
-
+                        priorty = 0;
                         break;
 
                     case 1:
-
+                        priorty = 1;
                         break;
                     case 2:
-
+                        priorty = 2;
                         break;
 
                 }
@@ -224,8 +227,6 @@ public class Add_New_Tasks extends AppCompatActivity {
             }
         });
     }
-
-
 
 
     public static String getCurrentDate() {
