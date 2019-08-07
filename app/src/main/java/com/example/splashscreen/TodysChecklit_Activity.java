@@ -95,6 +95,7 @@ public class TodysChecklit_Activity extends AppCompatActivity {
                 layoutDate++;
                 dateView.setText(addOneDayCalendar(layoutDate).toLowerCase());
                 new_TaskView.setVisibility(View.VISIBLE);
+                int a=10;
             }
 
 
