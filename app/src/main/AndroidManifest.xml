@@ -12,8 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Add_New_Tasks"
+        <activity android:name=".WeeklCheck_list"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity
+            android:name=".Add_New_Tasks"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".TodysChecklit_Activity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

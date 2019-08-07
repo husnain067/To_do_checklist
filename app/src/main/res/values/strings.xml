@@ -8,6 +8,9 @@
     <string name="submit">Save</string>
     <string name="time">Time:</string>
     <string name="reminder_time">Reminder time:</string>
+    <string name="weekly_activity_name">Weekly\nChecklist</string>
+
+
     <string-array name="reminder_array">
         <item>No</item>
         <item>yes</item>

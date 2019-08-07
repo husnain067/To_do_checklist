@@ -10,8 +10,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Layout;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,13 +42,14 @@ public class TodysChecklit_Activity extends AppCompatActivity {
     TextView dateView;
     ConstraintLayout layout;
     Integer layoutDate = 0;
+    private ImageView button1;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todys_checklit_);
-
+        button1 = (ImageView) findViewById(R.id.imageView);
         layout = findViewById(R.id.layout_id);
         new_TaskView = findViewById(R.id.newtask);
         dateView = findViewById(R.id.editText_Date);
@@ -76,30 +80,39 @@ public class TodysChecklit_Activity extends AppCompatActivity {
 
 
         initRecycleView();
+        gestureOn_activity();
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Creating the instance of PopupMenu
+                PopupMenu popup = new PopupMenu(TodysChecklit_Activity.this, button1);
+                //Inflating the Popup using xml file
+                popup.getMenuInflater()
+                        .inflate(R.menu.menu, popup.getMenu());
 
-        layout.setOnTouchListener(new OnSwipeTouchListener(TodysChecklit_Activity.this) {
+                //registering popup with OnMenuItemClickListener
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    public boolean onMenuItemClick(MenuItem item) {
+                        Toast.makeText(
+                                TodysChecklit_Activity.this,
+                                "You Clicked : " + item.getTitle(),
+                                Toast.LENGTH_SHORT
+                        ).show();
+                        if (item.getItemId()==R.id.two){
+                            Intent i = new Intent(TodysChecklit_Activity.this,WeeklCheck_list.class);
+                            startActivity(i);
+                        }
+                        return true;
+                    }
+                });
 
-            public void onSwipeRight() {
-                Toast.makeText(TodysChecklit_Activity.this, "right", Toast.LENGTH_SHORT).show();
-
-
-                layoutDate--;
-                dateView.setText(addOneDayCalendar(layoutDate).toLowerCase());
-
-                new_TaskView.setVisibility(View.GONE);
+                popup.show(); //showing popup menu
             }
-
-            public void onSwipeLeft() {
-                Toast.makeText(TodysChecklit_Activity.this, "left", Toast.LENGTH_SHORT).show();
-                if (layoutDate==0){return;}
-                layoutDate++;
-                dateView.setText(addOneDayCalendar(layoutDate).toLowerCase());
-                new_TaskView.setVisibility(View.VISIBLE);
-                int a=10;
-            }
+        }); //closing the setOnClickListener method
 
 
-        });
+
+
     }
 
 
@@ -135,6 +148,33 @@ public class TodysChecklit_Activity extends AppCompatActivity {
         return sdf.format(c.getTime());
     }
 
+    private void gestureOn_activity() {
+        layout.setOnTouchListener(new OnSwipeTouchListener(TodysChecklit_Activity.this) {
+
+            public void onSwipeRight() {
+                Toast.makeText(TodysChecklit_Activity.this, "right", Toast.LENGTH_SHORT).show();
+
+
+                layoutDate--;
+                dateView.setText(addOneDayCalendar(layoutDate).toLowerCase());
+
+                new_TaskView.setVisibility(View.GONE);
+            }
+
+            public void onSwipeLeft() {
+                Toast.makeText(TodysChecklit_Activity.this, "left", Toast.LENGTH_SHORT).show();
+                if (layoutDate == 0) {
+                    return;
+                }
+                layoutDate++;
+                dateView.setText(addOneDayCalendar(layoutDate).toLowerCase());
+                new_TaskView.setVisibility(View.VISIBLE);
+
+            }
+
+
+        });
+    }
 }
 
 
