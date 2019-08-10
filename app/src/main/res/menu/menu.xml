@@ -5,6 +5,9 @@
     <item
         android:id="@+id/two"
         android:title="@string/weekly_activity_name"/>
+    <item
+        android:id="@+id/today_t0_gratiude"
+        android:title="@string/grattitude_activity_name"/>
 
 
 

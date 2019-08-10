@@ -9,6 +9,9 @@
     <string name="time">Time:</string>
     <string name="reminder_time">Reminder time:</string>
     <string name="weekly_activity_name">Weekly\nChecklist</string>
+    <string name="grattitude_activity_name">Gratitude\nLog</string>
+    <string name="date_view">august\n10,\n2019</string>
+
 
 
     <string-array name="reminder_array">

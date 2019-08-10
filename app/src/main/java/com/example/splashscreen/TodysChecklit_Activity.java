@@ -37,11 +37,11 @@ public class TodysChecklit_Activity extends AppCompatActivity {
     private ArrayList<Task_Details> task_details = new ArrayList<>();
 
     private RecycleAdapterView radapter;
-    ImageView new_TaskView;
-    String newString;
-    TextView dateView;
-    ConstraintLayout layout;
-    Integer layoutDate = 0;
+   private ImageView new_TaskView;
+    private String newString;
+    private  TextView dateView;
+    private  ConstraintLayout layout;
+    private Integer layoutDate = 0;
     private ImageView button1;
 
     @SuppressLint("ClickableViewAccessibility")
@@ -100,6 +100,10 @@ public class TodysChecklit_Activity extends AppCompatActivity {
                         ).show();
                         if (item.getItemId()==R.id.two){
                             Intent i = new Intent(TodysChecklit_Activity.this,WeeklCheck_list.class);
+                            startActivity(i);
+                        }
+                        if (item.getItemId() == R.id.today_t0_gratiude) {
+                            Intent i = new Intent(TodysChecklit_Activity.this, Gratitude_log_activity.class);
                             startActivity(i);
                         }
                         return true;

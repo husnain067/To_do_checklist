@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
-        android:id="@+id/week_t0_today"
+        android:id="@+id/gratitude_t0_today"
         android:title="@string/toolbar_text"/>
     <item
-        android:id="@+id/week_t0_gratiude"
-        android:title="@string/grattitude_activity_name"/>
-
+        android:id="@+id/gratitude_t0_weekly"
+        android:title="@string/weekly_activity_name"/>
 </menu>
