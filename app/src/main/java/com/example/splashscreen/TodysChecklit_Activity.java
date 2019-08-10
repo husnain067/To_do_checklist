@@ -101,10 +101,12 @@ public class TodysChecklit_Activity extends AppCompatActivity {
                         if (item.getItemId()==R.id.two){
                             Intent i = new Intent(TodysChecklit_Activity.this,WeeklCheck_list.class);
                             startActivity(i);
+                            finish();
                         }
                         if (item.getItemId() == R.id.today_t0_gratiude) {
                             Intent i = new Intent(TodysChecklit_Activity.this, Gratitude_log_activity.class);
                             startActivity(i);
+                            finish();
                         }
                         return true;
                     }

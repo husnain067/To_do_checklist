@@ -59,7 +59,7 @@ public class RecycleAdapterView extends RecyclerView.Adapter<RecycleAdapterView.
         }
          if (var.getPriorty()==2){
             holder.priorty_check.setText("High");
-            holder.cardView.setCardBackgroundColor(mContext.getColor(R.color.high_priorty));
+            holder.cardView.setCardBackgroundColor( mContext.getColor(R.color.high_priorty));
         }
 
 

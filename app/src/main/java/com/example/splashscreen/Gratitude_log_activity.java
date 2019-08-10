@@ -41,10 +41,12 @@ public class Gratitude_log_activity extends AppCompatActivity {
                         if (item.getItemId() == R.id.gratitude_t0_today) {
                             Intent i = new Intent(Gratitude_log_activity.this, TodysChecklit_Activity.class);
                             startActivity(i);
+                            finish();
                         }
                         if (item.getItemId() == R.id.gratitude_t0_weekly) {
                             Intent i = new Intent(Gratitude_log_activity.this, WeeklCheck_list.class);
                             startActivity(i);
+                            finish();
                         }
                         return true;
                     }

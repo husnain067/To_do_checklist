@@ -60,6 +60,7 @@ public class WeeklCheck_list extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(WeeklCheck_list.this, Add_new_Weekly_Tasks.class);
                 startActivity(i);
+
             }
         });
         if (savedInstanceState == null) {
@@ -112,10 +113,13 @@ public class WeeklCheck_list extends AppCompatActivity {
                         if (item.getItemId() == R.id.week_t0_today) {
                             Intent i = new Intent(WeeklCheck_list.this, TodysChecklit_Activity.class);
                             startActivity(i);
+                            finish();
+
                         }
                         if (item.getItemId() == R.id.week_t0_gratiude) {
                             Intent i = new Intent(WeeklCheck_list.this, Gratitude_log_activity.class);
                             startActivity(i);
+                            finish();
                         }
                         return true;
                     }
@@ -123,7 +127,9 @@ public class WeeklCheck_list extends AppCompatActivity {
 
                 popup.show(); //showing popup menu
             }
+
         });
+
     }
 
     private void setCalender_dialog() {
