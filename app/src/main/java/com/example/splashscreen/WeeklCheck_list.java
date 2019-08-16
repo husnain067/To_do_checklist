@@ -121,6 +121,16 @@ public class WeeklCheck_list extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         }
+                        if (item.getItemId() == R.id.week_t0_daily_thoughts) {
+                            Intent i = new Intent(WeeklCheck_list.this, Daily_Thoughts.class);
+                            startActivity(i);
+                            finish();
+                        }
+                        if (item.getItemId() == R.id.week_t0_booksLog) {
+                            Intent i = new Intent(WeeklCheck_list.this, Books_to_Read_Log.class);
+                            startActivity(i);
+                            finish();
+                        }
                         return true;
                     }
                 });

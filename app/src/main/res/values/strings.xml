@@ -11,7 +11,9 @@
     <string name="weekly_activity_name">Weekly\nChecklist</string>
     <string name="grattitude_activity_name">Gratitude\nLog</string>
     <string name="date_view">august\n10,\n2019</string>
-
+    <string name="daily_thought">Daily\nThoughts</string>
+    <string name="books_read_log">Books to\nread</string>
+    <string name="books_read_logs">Books to\nread log</string>
 
 
     <string-array name="reminder_array">

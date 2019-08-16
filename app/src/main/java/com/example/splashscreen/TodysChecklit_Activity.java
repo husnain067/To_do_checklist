@@ -108,6 +108,16 @@ public class TodysChecklit_Activity extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         }
+                        if (item.getItemId() == R.id.today_t0_daily_thoughts) {
+                            Intent i = new Intent(TodysChecklit_Activity.this, Daily_Thoughts.class);
+                            startActivity(i);
+                            finish();
+                        }
+                        if (item.getItemId() == R.id.today_t0_booksLog) {
+                            Intent i = new Intent(TodysChecklit_Activity.this, Books_to_Read_Log.class);
+                            startActivity(i);
+                            finish();
+                        }
                         return true;
                     }
                 });

@@ -6,4 +6,10 @@
     <item
         android:id="@+id/gratitude_t0_weekly"
         android:title="@string/weekly_activity_name"/>
+    <item
+        android:id="@+id/gratitude_t0_daily_thoughts"
+        android:title="@string/daily_thought"/>
+    <item
+        android:id="@+id/gratitude_t0_booksLog"
+        android:title="@string/books_read_logs"/>
 </menu>
