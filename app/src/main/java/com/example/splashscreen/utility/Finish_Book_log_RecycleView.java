@@ -17,19 +17,20 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.splashscreen.Classes.BookLog_Details;
+import com.example.splashscreen.Classes.Finish_book_names;
 import com.example.splashscreen.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book_log_RecycleView extends RecyclerView.Adapter<Book_log_RecycleView.ViewHolder> {
+public class Finish_Book_log_RecycleView extends RecyclerView.Adapter<Finish_Book_log_RecycleView.ViewHolder> {
     private static final String TAG = "RecyclerViewAdapter";
-    private List<BookLog_Details> mBook_data = new ArrayList<>();
+    private List<Finish_book_names> mBook_data = new ArrayList<>();
 
     private Context mContext;
 
 
-    public Book_log_RecycleView(Context context, List<BookLog_Details> mData) {
+    public Finish_Book_log_RecycleView(Context context, List<Finish_book_names> mData) {
         mContext = context;
         mBook_data = mData;
         LayoutInflater inflater;
@@ -39,7 +40,7 @@ public class Book_log_RecycleView extends RecyclerView.Adapter<Book_log_RecycleV
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.book_log_xml_view, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.finish_book_log, parent, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
@@ -49,11 +50,10 @@ public class Book_log_RecycleView extends RecyclerView.Adapter<Book_log_RecycleV
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         Log.d(TAG, "onBindViewHolder: called.");
-        BookLog_Details bookLog_details=mBook_data.get(position);
-        holder.mAuthor_name.setText(bookLog_details.getAuthorName());
-        holder.mBook_name.setText(bookLog_details.getBookNAme());
-        holder.mDate.setText(bookLog_details.getCurrentDate());
-        holder.cardView.setCardBackgroundColor(Integer.parseInt(bookLog_details.getCardBackground()));
+        Finish_book_names bookLog_details=mBook_data.get(position);
+
+        holder.mBook_name.setText(bookLog_details.getBookName());
+
 
     }
 
@@ -65,20 +65,14 @@ public class Book_log_RecycleView extends RecyclerView.Adapter<Book_log_RecycleV
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView mBook_name;
-        EditText mAuthor_name;
-        TextView mDate;
-        CardView cardView;
-        ImageView imageView;
+
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            mBook_name = itemView.findViewById(R.id.book_name);
-            mAuthor_name = itemView.findViewById(R.id.author_name);
-            cardView = itemView.findViewById(R.id.recyleAdapter_bookLog);
-            mDate = itemView.findViewById(R.id.book_date);
-            imageView = itemView.findViewById(R.id.image_box_book_log);
+            mBook_name = itemView.findViewById(R.id.finish_book_name);
+
 
 
         }

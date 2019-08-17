@@ -1,6 +1,8 @@
 package com.example.splashscreen;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,17 +12,29 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import com.example.splashscreen.Classes.BookLog_Details;
+import com.example.splashscreen.Classes.Finish_book_names;
 import com.example.splashscreen.utility.Book_log_RecycleView;
+import com.example.splashscreen.utility.Finish_Book_log_RecycleView;
+import com.example.splashscreen.utility.RecycleAdapterView;
+import com.example.splashscreen.utility.Task_Details;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 import java.util.TimeZone;
 
 public class Books_to_Read_Log extends AppCompatActivity {
     private ImageView new_bookIcon;
     private ImageView menu_popup;
     private Book_log_RecycleView book_log_recycleView;
+    private Finish_Book_log_RecycleView finish_book_log_recycleView;
+    private ArrayList<BookLog_Details> bookLog_details = new ArrayList<>();
+    private ArrayList<Finish_book_names> finish_book_names = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +51,39 @@ public class Books_to_Read_Log extends AppCompatActivity {
             }
         });
         setMenu_popup();
+        bookLog_details.add(new BookLog_Details("Jail Diary", "Chandrashekar", getCurrentDate(), "0000"));
+        bookLog_details.add(new BookLog_Details("David Copperfield", "Charles Dickens", getCurrentDate(), "0000"));
+        bookLog_details.add(new BookLog_Details("Death of City", "Amrita Pritam", getCurrentDate(), "0000"));
+        finish_book_names.add(new Finish_book_names("Death of City"));
+
+
+        setBook_log_recycleView();
+        setFinish_book_log_recycleView();
+        setCurrent_bookReading_recycleView();
     }
 
     private void setBook_log_recycleView() {
+        RecyclerView recyclerView = findViewById(R.id.book_cover_view);
+        book_log_recycleView = new Book_log_RecycleView(this, bookLog_details);
+        recyclerView.setAdapter(book_log_recycleView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
 
     }
+
+    private void setFinish_book_log_recycleView() {
+        RecyclerView recyclerView = findViewById(R.id.finish_book_cover_view);
+        finish_book_log_recycleView = new Finish_Book_log_RecycleView(this, finish_book_names);
+        recyclerView.setAdapter(finish_book_log_recycleView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
+    }
+
+    private void setCurrent_bookReading_recycleView() {
+        RecyclerView recyclerView = findViewById(R.id.current_reading_books);
+        finish_book_log_recycleView = new Finish_Book_log_RecycleView(this, finish_book_names);
+        recyclerView.setAdapter(finish_book_log_recycleView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
+    }
+
 
     private void setMenu_popup() {
         menu_popup.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +120,11 @@ public class Books_to_Read_Log extends AppCompatActivity {
                         }
                         if (item.getItemId() == R.id.booksLog_t0_gratitude) {
                             Intent i = new Intent(Books_to_Read_Log.this, Gratitude_log_activity.class);
+                            startActivity(i);
+                            finish();
+                        }
+                        if (item.getItemId() == R.id.booksLog_to_spendingLog) {
+                            Intent i = new Intent(Books_to_Read_Log.this, Spending_Log.class);
                             startActivity(i);
                             finish();
                         }

@@ -131,6 +131,11 @@ public class WeeklCheck_list extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         }
+                        if (item.getItemId() == R.id.week_t0_spendingLog) {
+                            Intent i = new Intent(WeeklCheck_list.this, Spending_Log.class);
+                            startActivity(i);
+                            finish();
+                        }
                         return true;
                     }
                 });

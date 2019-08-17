@@ -12,4 +12,7 @@
     <item
         android:id="@+id/booksLog_t0_daily"
         android:title="@string/grattitude_activity_name"/>
+    <item
+        android:id="@+id/booksLog_to_spendingLog"
+        android:title="@string/spending_log"/>
 </menu>

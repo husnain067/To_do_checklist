@@ -72,6 +72,11 @@ public class Daily_Thoughts extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         }
+                        if (item.getItemId() == R.id.daily_thoughts_to_spendingLog) {
+                            Intent i = new Intent(Daily_Thoughts.this, Spending_Log.class);
+                            startActivity(i);
+                            finish();
+                        }
                         return true;
                     }
                 });

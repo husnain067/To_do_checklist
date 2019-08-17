@@ -118,6 +118,11 @@ public class TodysChecklit_Activity extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         }
+                        if (item.getItemId() == R.id.today_t0_spendingLog) {
+                            Intent i = new Intent(TodysChecklit_Activity.this, Spending_Log.class);
+                            startActivity(i);
+                            finish();
+                        }
                         return true;
                     }
                 });

@@ -105,6 +105,11 @@ public class Gratitude_log_activity extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         }
+                        if (item.getItemId() == R.id.gratitude_t0_spendingLog) {
+                            Intent i = new Intent(Gratitude_log_activity.this, Spending_Log.class);
+                            startActivity(i);
+                            finish();
+                        }
 
                         return true;
                     }
