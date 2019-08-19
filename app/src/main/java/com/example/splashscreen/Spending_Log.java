@@ -1,6 +1,9 @@
 package com.example.splashscreen;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,15 +13,55 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import com.example.splashscreen.Classes.MoviesDetails;
+import com.example.splashscreen.Classes.SpendingLogDetails;
+import com.example.splashscreen.utility.MoviesLogRecycleView;
+import com.example.splashscreen.utility.SpendingLogRecycleView;
+
+import java.util.ArrayList;
+
 public class Spending_Log extends AppCompatActivity {
-private ImageView menu_popup;
+    private ImageView menu_popup;
+    private ImageView new_spendIcon;
+    private SpendingLogRecycleView spendingLogRecycleView;
+    private ArrayList<SpendingLogDetails> spendingLogDetails = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spending__log);
-        menu_popup=findViewById(R.id.spending_Log_to);
+        menu_popup = findViewById(R.id.spending_Log_to);
+        new_spendIcon = findViewById(R.id.add_new_spentView);
+
         setMenu_popup();
+        setonClick();
+
+
+        spendingLogDetails.add(new SpendingLogDetails("19/8","100","100","Alfa",R.drawable.tick,R.drawable.x_mark));
+        spendingLogDetails.add(new SpendingLogDetails("20/8","200","300","Xyz",R.drawable.x_mark,R.drawable.tick));
+        spendingLogDetails.add(new SpendingLogDetails("21/8","1000","2000","Mart",R.drawable.tick,R.drawable.tick));
+        spendingLogDetails.add(new SpendingLogDetails("22/8","80","100","Metro",R.drawable.x_mark,R.drawable.x_mark));
+
+        setSpending_logRecycle();
     }
+
+    private void setonClick() {
+        new_spendIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Spending_Log.this, AddNewSpendLog.class);
+                startActivity(i);
+            }
+        });
+    }
+
+    private void setSpending_logRecycle() {
+        RecyclerView recyclerView = findViewById(R.id.spendingLog_view);
+        spendingLogRecycleView = new SpendingLogRecycleView(this, spendingLogDetails);
+        recyclerView.setAdapter(spendingLogRecycleView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
     private void setMenu_popup() {
         menu_popup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +102,7 @@ private ImageView menu_popup;
                             finish();
                         }
                         if (item.getItemId() == R.id.spending_to_weekly) {
-                            Intent i = new Intent(Spending_Log.this, WeeklCheck_list.class);
+                            Intent i = new Intent(Spending_Log.this, WeekCheck_list.class);
                             startActivity(i);
                             finish();
                         }

@@ -23,8 +23,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
-import static com.example.splashscreen.Add_New_Tasks.getCurrentDate;
-
 public class Add_new_Weekly_Tasks extends AppCompatActivity {
     private Button TimePicker_View;
     private EditText add_newNotes;
@@ -66,7 +64,7 @@ public class Add_new_Weekly_Tasks extends AppCompatActivity {
                 }
 
 
-                Intent i = new Intent(Add_new_Weekly_Tasks.this, WeeklCheck_list.class);
+                Intent i = new Intent(Add_new_Weekly_Tasks.this, WeekCheck_list.class);
 
                 //submit_challengeList = Collections.singletonList(newTask);
 

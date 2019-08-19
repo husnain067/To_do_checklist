@@ -16,15 +16,11 @@ import com.example.splashscreen.Classes.BookLog_Details;
 import com.example.splashscreen.Classes.Finish_book_names;
 import com.example.splashscreen.utility.Book_log_RecycleView;
 import com.example.splashscreen.utility.Finish_Book_log_RecycleView;
-import com.example.splashscreen.utility.RecycleAdapterView;
-import com.example.splashscreen.utility.Task_Details;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.Date;
-import java.util.List;
 import java.util.TimeZone;
 
 public class Books_to_Read_Log extends AppCompatActivity {
@@ -109,7 +105,7 @@ public class Books_to_Read_Log extends AppCompatActivity {
                             finish();
                         }
                         if (item.getItemId() == R.id.booksLog_t0_weekly) {
-                            Intent i = new Intent(Books_to_Read_Log.this, WeeklCheck_list.class);
+                            Intent i = new Intent(Books_to_Read_Log.this, WeekCheck_list.class);
                             startActivity(i);
                             finish();
                         }
@@ -128,7 +124,11 @@ public class Books_to_Read_Log extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         }
-
+                        if (item.getItemId() == R.id.booksLog_to_movies) {
+                            Intent i = new Intent(Books_to_Read_Log.this, MoviesToWatch.class);
+                            startActivity(i);
+                            finish();
+                        }
                         return true;
                     }
                 });

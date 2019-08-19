@@ -63,7 +63,7 @@ public class Daily_Thoughts extends AppCompatActivity {
                             finish();
                         }
                         if (item.getItemId() == R.id.daily_thoughts_t0_weekly) {
-                            Intent i = new Intent(Daily_Thoughts.this, WeeklCheck_list.class);
+                            Intent i = new Intent(Daily_Thoughts.this, WeekCheck_list.class);
                             startActivity(i);
                             finish();
                         }

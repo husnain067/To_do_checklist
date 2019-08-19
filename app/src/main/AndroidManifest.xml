@@ -12,8 +12,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Spending_Log"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".AddNewbucketLog"></activity>
+        <activity android:name=".BucketList" />
+        <activity
+            android:name=".AddNewSpendLog"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".CreateNewMovieLog"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".MoviesToWatch"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Spending_Log"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Create_new_Book_log"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -33,7 +45,7 @@
             android:name=".Add_new_Weekly_Tasks"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".WeeklCheck_list"
+            android:name=".WeekCheck_list"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Add_New_Tasks"

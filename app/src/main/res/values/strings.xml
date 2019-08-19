@@ -15,6 +15,8 @@
     <string name="books_read_log">Books to\nread</string>
     <string name="books_read_logs">Books to\nread log</string>
     <string name="spending_log">Spending\nlog</string>
+    <string name="MoviesLog">Movies to\nWatch</string>
+    <string name="Bucketlog">Bucket\nlist</string>
 
 
     <string-array name="reminder_array">
@@ -25,6 +27,11 @@
         <item>Low</item>
         <item>Meduim</item>
         <item>High</item>
+
+    </string-array>
+    <string-array name="payment_array">
+        <item>Cash</item>
+        <item>Credit</item>
 
     </string-array>
 

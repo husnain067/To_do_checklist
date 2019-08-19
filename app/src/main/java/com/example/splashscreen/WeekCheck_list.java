@@ -21,7 +21,6 @@ import com.example.splashscreen.utility.OnSwipeTouchListener;
 import com.example.splashscreen.utility.RecycleAdapterView;
 import com.example.splashscreen.utility.Task_Details;
 
-import java.io.DataInput;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -29,11 +28,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
-import static com.example.splashscreen.Add_New_Tasks.priorty;
 import static com.example.splashscreen.Add_new_Weekly_Tasks.weekly_priorty;
 
 
-public class WeeklCheck_list extends AppCompatActivity {
+public class WeekCheck_list extends AppCompatActivity {
     private ImageView menu_popup;
     ImageView new_TaskView;
     private ArrayList<Task_Details> task_details = new ArrayList<>();
@@ -58,7 +56,7 @@ public class WeeklCheck_list extends AppCompatActivity {
         new_TaskView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(WeeklCheck_list.this, Add_new_Weekly_Tasks.class);
+                Intent i = new Intent(WeekCheck_list.this, Add_new_Weekly_Tasks.class);
                 startActivity(i);
 
             }
@@ -97,7 +95,7 @@ public class WeeklCheck_list extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Creating the instance of PopupMenu
-                PopupMenu popup = new PopupMenu(WeeklCheck_list.this, menu_popup);
+                PopupMenu popup = new PopupMenu(WeekCheck_list.this, menu_popup);
                 //Inflating the Popup using xml file
                 popup.getMenuInflater()
                         .inflate(R.menu.weekly_to_today_menu, popup.getMenu());
@@ -106,33 +104,38 @@ public class WeeklCheck_list extends AppCompatActivity {
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     public boolean onMenuItemClick(MenuItem item) {
                         Toast.makeText(
-                                WeeklCheck_list.this,
+                                WeekCheck_list.this,
                                 "You Clicked : " + item.getTitle(),
                                 Toast.LENGTH_SHORT
                         ).show();
                         if (item.getItemId() == R.id.week_t0_today) {
-                            Intent i = new Intent(WeeklCheck_list.this, TodysChecklit_Activity.class);
+                            Intent i = new Intent(WeekCheck_list.this, TodysChecklit_Activity.class);
                             startActivity(i);
                             finish();
 
                         }
                         if (item.getItemId() == R.id.week_t0_gratiude) {
-                            Intent i = new Intent(WeeklCheck_list.this, Gratitude_log_activity.class);
+                            Intent i = new Intent(WeekCheck_list.this, Gratitude_log_activity.class);
                             startActivity(i);
                             finish();
                         }
                         if (item.getItemId() == R.id.week_t0_daily_thoughts) {
-                            Intent i = new Intent(WeeklCheck_list.this, Daily_Thoughts.class);
+                            Intent i = new Intent(WeekCheck_list.this, Daily_Thoughts.class);
                             startActivity(i);
                             finish();
                         }
                         if (item.getItemId() == R.id.week_t0_booksLog) {
-                            Intent i = new Intent(WeeklCheck_list.this, Books_to_Read_Log.class);
+                            Intent i = new Intent(WeekCheck_list.this, Books_to_Read_Log.class);
                             startActivity(i);
                             finish();
                         }
                         if (item.getItemId() == R.id.week_t0_spendingLog) {
-                            Intent i = new Intent(WeeklCheck_list.this, Spending_Log.class);
+                            Intent i = new Intent(WeekCheck_list.this, Spending_Log.class);
+                            startActivity(i);
+                            finish();
+                        }
+                        if (item.getItemId() == R.id.week_to_movies) {
+                            Intent i = new Intent(WeekCheck_list.this, MoviesToWatch.class);
                             startActivity(i);
                             finish();
                         }
@@ -214,10 +217,10 @@ public class WeeklCheck_list extends AppCompatActivity {
     }
 
     private void gestureOn_activity() {
-        layout.setOnTouchListener(new OnSwipeTouchListener(WeeklCheck_list.this) {
+        layout.setOnTouchListener(new OnSwipeTouchListener(WeekCheck_list.this) {
 
             public void onSwipeRight() {
-                Toast.makeText(WeeklCheck_list.this, "right", Toast.LENGTH_SHORT).show();
+                Toast.makeText(WeekCheck_list.this, "right", Toast.LENGTH_SHORT).show();
 
 
                 layoutDate--;
@@ -227,7 +230,7 @@ public class WeeklCheck_list extends AppCompatActivity {
             }
 
             public void onSwipeLeft() {
-                Toast.makeText(WeeklCheck_list.this, "left", Toast.LENGTH_SHORT).show();
+                Toast.makeText(WeekCheck_list.this, "left", Toast.LENGTH_SHORT).show();
                 if (layoutDate == 0) {
                     return;
                 }

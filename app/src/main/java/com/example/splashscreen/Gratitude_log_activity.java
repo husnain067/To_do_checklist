@@ -91,7 +91,7 @@ public class Gratitude_log_activity extends AppCompatActivity {
                             finish();
                         }
                         if (item.getItemId() == R.id.gratitude_t0_weekly) {
-                            Intent i = new Intent(Gratitude_log_activity.this, WeeklCheck_list.class);
+                            Intent i = new Intent(Gratitude_log_activity.this, WeekCheck_list.class);
                             startActivity(i);
                             finish();
                         }
@@ -107,6 +107,11 @@ public class Gratitude_log_activity extends AppCompatActivity {
                         }
                         if (item.getItemId() == R.id.gratitude_t0_spendingLog) {
                             Intent i = new Intent(Gratitude_log_activity.this, Spending_Log.class);
+                            startActivity(i);
+                            finish();
+                        }
+                        if (item.getItemId() == R.id.gratitude_to_movies) {
+                            Intent i = new Intent(Gratitude_log_activity.this, MoviesToWatch.class);
                             startActivity(i);
                             finish();
                         }

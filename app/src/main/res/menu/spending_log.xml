@@ -15,5 +15,11 @@
     <item
         android:id="@+id/spending_to_today"
         android:title="@string/toolbar_text"/>
+    <item
+        android:id="@+id/spending_to_movies"
+        android:title="@string/MoviesLog"/>
+    <item
+        android:id="@+id/spending_to_bucketLog"
+        android:title="@string/Bucketlog"/>
 
 </menu>

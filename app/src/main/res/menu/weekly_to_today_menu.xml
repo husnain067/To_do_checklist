@@ -16,5 +16,11 @@
     <item
         android:id="@+id/week_t0_spendingLog"
         android:title="@string/spending_log"/>
+    <item
+        android:id="@+id/week_to_movies"
+        android:title="@string/MoviesLog"/>
+    <item
+        android:id="@+id/week_to_bucketLog"
+        android:title="@string/Bucketlog"/>
 
 </menu>

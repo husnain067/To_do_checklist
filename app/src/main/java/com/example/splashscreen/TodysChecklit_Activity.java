@@ -8,9 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Layout;
 import android.text.TextUtils;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -27,7 +25,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 import java.util.TimeZone;
 
 import static com.example.splashscreen.Add_New_Tasks.priorty;
@@ -37,10 +34,10 @@ public class TodysChecklit_Activity extends AppCompatActivity {
     private ArrayList<Task_Details> task_details = new ArrayList<>();
 
     private RecycleAdapterView radapter;
-   private ImageView new_TaskView;
+    private ImageView new_TaskView;
     private String newString;
-    private  TextView dateView;
-    private  ConstraintLayout layout;
+    private TextView dateView;
+    private ConstraintLayout layout;
     private Integer layoutDate = 0;
     private ImageView button1;
 
@@ -98,8 +95,8 @@ public class TodysChecklit_Activity extends AppCompatActivity {
                                 "You Clicked : " + item.getTitle(),
                                 Toast.LENGTH_SHORT
                         ).show();
-                        if (item.getItemId()==R.id.two){
-                            Intent i = new Intent(TodysChecklit_Activity.this,WeeklCheck_list.class);
+                        if (item.getItemId() == R.id.two) {
+                            Intent i = new Intent(TodysChecklit_Activity.this, WeekCheck_list.class);
                             startActivity(i);
                             finish();
                         }
@@ -123,6 +120,12 @@ public class TodysChecklit_Activity extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         }
+                        if (item.getItemId() == R.id.today_to_movies) {
+                            Intent i = new Intent(TodysChecklit_Activity.this, MoviesToWatch.class);
+                            startActivity(i);
+                            finish();
+                        }
+
                         return true;
                     }
                 });
@@ -130,8 +133,6 @@ public class TodysChecklit_Activity extends AppCompatActivity {
                 popup.show(); //showing popup menu
             }
         }); //closing the setOnClickListener method
-
-
 
 
     }

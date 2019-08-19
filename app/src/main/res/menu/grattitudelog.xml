@@ -15,4 +15,10 @@
     <item
         android:id="@+id/gratitude_t0_spendingLog"
         android:title="@string/spending_log"/>
+    <item
+        android:id="@+id/gratitude_to_movies"
+        android:title="@string/MoviesLog"/>
+    <item
+        android:id="@+id/gratitude_to_bucketLog"
+        android:title="@string/Bucketlog"/>
 </menu>
