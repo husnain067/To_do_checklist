@@ -139,6 +139,12 @@ public class WeekCheck_list extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         }
+                        if (item.getItemId() == R.id.week_to_bucketLog) {
+                            Intent i = new Intent(WeekCheck_list.this, BucketList.class);
+                            startActivity(i);
+                            finish();
+                        }
+
                         return true;
                     }
                 });

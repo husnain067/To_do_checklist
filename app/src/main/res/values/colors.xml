@@ -8,4 +8,11 @@
     <color name="high_priorty">#fad2a0</color>
     <color name="meduim_priorty">#f28a6d</color>
     <color name="scally">#F0EFF4</color>
+    <color name="lightGray">#A8A8A8</color>
+    <color name="one">#FFD8CE</color>
+    <color name="two">#A8A8A8</color>
+    <color name="three">#A8A8A8</color>
+    <color name="four">#A8A8A8</color>
+    <color name="five">#A8A8A8</color>
+
 </resources>

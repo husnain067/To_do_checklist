@@ -106,6 +106,16 @@ public class Spending_Log extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         }
+                        if (item.getItemId() == R.id.spending_to_movies) {
+                            Intent i = new Intent(Spending_Log.this, MoviesToWatch.class);
+                            startActivity(i);
+                            finish();
+                        }
+                        if (item.getItemId() == R.id.spending_to_bucketLog) {
+                            Intent i = new Intent(Spending_Log.this, BucketList.class);
+                            startActivity(i);
+                            finish();
+                        }
                         return true;
                     }
                 });

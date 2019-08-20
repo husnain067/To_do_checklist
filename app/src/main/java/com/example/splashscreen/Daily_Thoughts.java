@@ -12,6 +12,7 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.splashscreen.Classes.BookLog_Details;
 import com.example.splashscreen.utility.OnSwipeTouchListener;
 
 import java.text.ParseException;
@@ -68,12 +69,27 @@ public class Daily_Thoughts extends AppCompatActivity {
                             finish();
                         }
                         if (item.getItemId() == R.id.daily_thoughts_t0_gratitude) {
-                            Intent i = new Intent(Daily_Thoughts.this, Daily_Thoughts.class);
+                            Intent i = new Intent(Daily_Thoughts.this, Gratitude_log_activity.class);
+                            startActivity(i);
+                            finish();
+                        }
+                        if (item.getItemId() == R.id.daily_thoughts_t0_booksLog) {
+                            Intent i = new Intent(Daily_Thoughts.this, Books_to_Read_Log.class);
                             startActivity(i);
                             finish();
                         }
                         if (item.getItemId() == R.id.daily_thoughts_to_spendingLog) {
                             Intent i = new Intent(Daily_Thoughts.this, Spending_Log.class);
+                            startActivity(i);
+                            finish();
+                        }
+                        if (item.getItemId() == R.id.daily_to_movies) {
+                            Intent i = new Intent(Daily_Thoughts.this, MoviesToWatch.class);
+                            startActivity(i);
+                            finish();
+                        }
+                        if (item.getItemId() == R.id.daily_to_bucketLog) {
+                            Intent i = new Intent(Daily_Thoughts.this, BucketList.class);
                             startActivity(i);
                             finish();
                         }

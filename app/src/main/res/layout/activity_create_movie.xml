@@ -16,17 +16,7 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="2dp" />
 
-    <ImageView
-        android:id="@+id/m"
-        android:layout_width="50dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar2"
-        app:layout_constraintVertical_bias="0.00999999"
-        app:srcCompat="@drawable/ic_more_vert_black_24dp"
-        tools:ignore="VectorDrawableCompat" />
+
 
     <TextView
         android:id="@+id/textView"
@@ -80,6 +70,9 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="@color/button"
+                    android:maxLength="40"
+                    android:maxLines="2"
                     android:hint="Add title" />
             </LinearLayout>
 
@@ -105,12 +98,13 @@
                     android:id="@+id/rating_bar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    style="?android:attr/radioButtonStyle"
-                    android:numStars="5"
-                    android:stepSize="0.1"
-                    android:clickable="true"
                     android:layout_gravity="center"
-                    android:isIndicator="true" />
+                    android:numStars="5"
+                    android:isIndicator="false"
+                    android:clickable="true"
+                    android:theme="@style/RatingBar"
+
+                    style="@style/Base.Widget.AppCompat.RatingBar"/>
 
 
 
@@ -137,7 +131,6 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardLayout_movie_log"
         app:layout_constraintVertical_bias="0.147" />

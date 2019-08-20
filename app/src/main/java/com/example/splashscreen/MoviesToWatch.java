@@ -54,7 +54,7 @@ public class MoviesToWatch extends AppCompatActivity {
                 PopupMenu popup = new PopupMenu(MoviesToWatch.this, menu_popup);
                 //Inflating the Popup using xml file
                 popup.getMenuInflater()
-                        .inflate(R.menu.weekly_to_today_menu, popup.getMenu());
+                        .inflate(R.menu.movieslog, popup.getMenu());
 
                 //registering popup with OnMenuItemClickListener
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -64,29 +64,39 @@ public class MoviesToWatch extends AppCompatActivity {
                                 "You Clicked : " + item.getTitle(),
                                 Toast.LENGTH_SHORT
                         ).show();
-                        if (item.getItemId() == R.id.week_t0_today) {
+                        if (item.getItemId() == R.id.movies_to_today) {
                             Intent i = new Intent(MoviesToWatch.this, TodysChecklit_Activity.class);
                             startActivity(i);
                             finish();
 
                         }
-                        if (item.getItemId() == R.id.week_t0_gratiude) {
+                        if (item.getItemId() == R.id.movies_to_grattitude) {
                             Intent i = new Intent(MoviesToWatch.this, Gratitude_log_activity.class);
                             startActivity(i);
                             finish();
                         }
-                        if (item.getItemId() == R.id.week_t0_daily_thoughts) {
+                        if (item.getItemId() == R.id.movies_to_Daily) {
                             Intent i = new Intent(MoviesToWatch.this, Daily_Thoughts.class);
                             startActivity(i);
                             finish();
                         }
-                        if (item.getItemId() == R.id.week_t0_booksLog) {
+                        if (item.getItemId() == R.id.movies_to_book_log) {
                             Intent i = new Intent(MoviesToWatch.this, Books_to_Read_Log.class);
                             startActivity(i);
                             finish();
                         }
-                        if (item.getItemId() == R.id.week_t0_spendingLog) {
+                        if (item.getItemId() == R.id.movies_to_spending) {
                             Intent i = new Intent(MoviesToWatch.this, Spending_Log.class);
+                            startActivity(i);
+                            finish();
+                        }
+                        if (item.getItemId() == R.id.movies_to_bucketLog) {
+                            Intent i = new Intent(MoviesToWatch.this, BucketList.class);
+                            startActivity(i);
+                            finish();
+                        }
+                        if (item.getItemId() == R.id.movies_to_weekly) {
+                            Intent i = new Intent(MoviesToWatch.this, WeekCheck_list.class);
                             startActivity(i);
                             finish();
                         }

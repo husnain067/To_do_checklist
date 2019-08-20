@@ -115,6 +115,11 @@ public class Gratitude_log_activity extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         }
+                        if (item.getItemId() == R.id.gratitude_to_bucketLog) {
+                            Intent i = new Intent(Gratitude_log_activity.this, BucketList.class);
+                            startActivity(i);
+                            finish();
+                        }
 
                         return true;
                     }

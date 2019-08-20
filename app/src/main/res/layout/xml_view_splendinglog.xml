@@ -10,7 +10,6 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
         android:orientation="horizontal">
 
         <TextView
@@ -72,7 +71,7 @@
         <ImageView
             android:id="@+id/xml_cross"
             android:layout_width="0dp"
-            android:layout_height="28dp"
+            android:layout_height="30dp"
             android:layout_weight="1.66"
             android:background="@drawable/border_line"
             android:src="@drawable/x_mark"

@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -40,6 +41,7 @@ public class TodysChecklit_Activity extends AppCompatActivity {
     private ConstraintLayout layout;
     private Integer layoutDate = 0;
     private ImageView button1;
+
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -122,6 +124,11 @@ public class TodysChecklit_Activity extends AppCompatActivity {
                         }
                         if (item.getItemId() == R.id.today_to_movies) {
                             Intent i = new Intent(TodysChecklit_Activity.this, MoviesToWatch.class);
+                            startActivity(i);
+                            finish();
+                        }
+                        if (item.getItemId() == R.id.today_to_bucketLog) {
+                            Intent i = new Intent(TodysChecklit_Activity.this, BucketList.class);
                             startActivity(i);
                             finish();
                         }

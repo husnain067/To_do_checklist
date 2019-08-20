@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:id="@+id/movies_to_today"
+        android:title="@string/toolbar_text"/>
+    <item
         android:id="@+id/movies_to_weekly"
         android:title="@string/weekly_activity_name"/>
     <item
@@ -10,11 +13,12 @@
         android:id="@+id/movies_to_Daily"
         android:title="@string/daily_thought"/>
     <item
+        android:id="@+id/movies_to_spending"
+        android:title="@string/spending_log"/>
+    <item
         android:id="@+id/movies_to_book_log"
         android:title="@string/books_read_logs"/>
-    <item
-        android:id="@+id/movies_to_today"
-        android:title="@string/toolbar_text"/>
+
     <item
         android:id="@+id/movies_to_bucketLog"
         android:title="@string/Bucketlog"/>
