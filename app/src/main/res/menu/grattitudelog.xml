@@ -21,4 +21,7 @@
     <item
         android:id="@+id/gratitude_to_bucketLog"
         android:title="@string/Bucketlog"/>
+    <item
+        android:id="@+id/gratitude_to_mood"
+        android:title="@string/mood_tracker"/>
 </menu>

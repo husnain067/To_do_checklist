@@ -93,6 +93,11 @@ public class Daily_Thoughts extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         }
+                        if (item.getItemId() == R.id.daily_to_mood) {
+                            Intent i = new Intent(Daily_Thoughts.this, MoodTracker.class);
+                            startActivity(i);
+                            finish();
+                        }
                         return true;
                     }
                 });

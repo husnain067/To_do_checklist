@@ -116,6 +116,11 @@ public class Spending_Log extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         }
+                        if (item.getItemId() == R.id.spending_to_mood) {
+                            Intent i = new Intent(Spending_Log.this, MoodTracker.class);
+                            startActivity(i);
+                            finish();
+                        }
                         return true;
                     }
                 });

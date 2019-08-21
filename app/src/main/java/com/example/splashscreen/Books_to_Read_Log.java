@@ -129,6 +129,11 @@ public class Books_to_Read_Log extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         }
+                        if (item.getItemId() == R.id.booksLog_to_mood) {
+                            Intent i = new Intent(Books_to_Read_Log.this, MoodTracker.class);
+                            startActivity(i);
+                            finish();
+                        }
                         return true;
                     }
                 });

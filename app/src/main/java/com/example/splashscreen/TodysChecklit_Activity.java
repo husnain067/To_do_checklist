@@ -132,7 +132,11 @@ public class TodysChecklit_Activity extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         }
-
+                        if (item.getItemId() == R.id.today_to_mood) {
+                            Intent i = new Intent(TodysChecklit_Activity.this, MoodTracker.class);
+                            startActivity(i);
+                            finish();
+                        }
                         return true;
                     }
                 });

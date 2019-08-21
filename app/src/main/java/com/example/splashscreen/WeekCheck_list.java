@@ -33,15 +33,15 @@ import static com.example.splashscreen.Add_new_Weekly_Tasks.weekly_priorty;
 
 public class WeekCheck_list extends AppCompatActivity {
     private ImageView menu_popup;
-    ImageView new_TaskView;
+  private   ImageView new_TaskView;
     private ArrayList<Task_Details> task_details = new ArrayList<>();
 
     private RecycleAdapterView radapter;
 
     String newString;
-    TextView dateView;
-    ConstraintLayout layout;
-    Integer layoutDate = 0;
+    private TextView dateView;
+   private ConstraintLayout layout;
+   private Integer layoutDate = 0;
 
 
 
@@ -144,6 +144,11 @@ public class WeekCheck_list extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         }
+                        if (item.getItemId() == R.id.week_to_mood) {
+                            Intent i = new Intent(WeekCheck_list.this, MoodTracker.class);
+                            startActivity(i);
+                            finish();
+                        }
 
                         return true;
                     }
@@ -190,6 +195,7 @@ public class WeekCheck_list extends AppCompatActivity {
         dialog.setCancelable(false);
 
     }
+
     private void initRecycleView() {
 
         RecyclerView recyclerView = findViewById(R.id.weekly_recycle_view);
@@ -200,7 +206,7 @@ public class WeekCheck_list extends AppCompatActivity {
 
     }
 
-    public static String getCurrentDate() {
+    private static String getCurrentDate() {
         String DATE_FORMAT_4 = "MMMM dd, yyyy";
         SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT_4);
         dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
@@ -208,7 +214,7 @@ public class WeekCheck_list extends AppCompatActivity {
         return dateFormat.format(today);
     }
 
-    public static String addOneDayCalendar(int i) {
+    private static String addOneDayCalendar(int i) {
 
         String date = getCurrentDate();
         SimpleDateFormat sdf = new SimpleDateFormat("MMMM dd, yyyy");

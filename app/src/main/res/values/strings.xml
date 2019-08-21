@@ -17,6 +17,7 @@
     <string name="spending_log">Spending\nlog</string>
     <string name="MoviesLog">Movies to\nWatch</string>
     <string name="Bucketlog">Bucket\nlist</string>
+    <string name="mood_tracker">Mood\ntracker</string>
 
 
     <string-array name="reminder_array">

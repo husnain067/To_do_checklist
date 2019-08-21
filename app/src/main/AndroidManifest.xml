@@ -12,10 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddNewbucketLog"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".BucketList"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".MoodTracker"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".AddNewbucketLog"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".BucketList"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".AddNewSpendLog"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
