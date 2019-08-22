@@ -145,7 +145,12 @@ public class WeekCheck_list extends AppCompatActivity {
                             finish();
                         }
                         if (item.getItemId() == R.id.week_to_mood) {
-                            Intent i = new Intent(WeekCheck_list.this, MoodTracker.class);
+                            Intent i = new Intent(WeekCheck_list.this, SelectMoods.class);
+                            startActivity(i);
+                            finish();
+                        }
+                        if (item.getItemId() == R.id.week_to_habit) {
+                            Intent i = new Intent(WeekCheck_list.this, HabitTracker.class);
                             startActivity(i);
                             finish();
                         }

@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
-        android:id="@+id/bucketLog_to_today"
+        android:id="@+id/habit_t0_today"
         android:title="@string/toolbar_text"/>
     <item
-        android:id="@+id/bucketLog_to_week"
+        android:id="@+id/habit_t0_week"
         android:title="@string/weekly_activity_name"/>
     <item
-        android:id="@+id/bucketLog_t0_gratiude"
+        android:id="@+id/habit_t0_gratiude"
         android:title="@string/grattitude_activity_name"/>
     <item
-        android:id="@+id/bucketLog_t0_daily_thoughts"
+        android:id="@+id/habit_t0_daily_thoughts"
         android:title="@string/daily_thought"/>
     <item
-        android:id="@+id/bucketLog_t0_booksLog"
+        android:id="@+id/habit_t0_booksLog"
         android:title="@string/books_read_logs"/>
     <item
-        android:id="@+id/bucketLog_t0_spendingLog"
+        android:id="@+id/habit_t0_spendingLog"
         android:title="@string/spending_log"/>
     <item
-        android:id="@+id/bucketLog_to_movies"
+        android:id="@+id/habit_to_movies"
         android:title="@string/MoviesLog"/>
     <item
-        android:id="@+id/bucket_to_mood"
-        android:title="@string/mood_tracker"/>
+        android:id="@+id/habit_to_bucketLog"
+        android:title="@string/Bucketlog"/>
     <item
-        android:id="@+id/bucket_to_habit"
-        android:title="@string/habit_tracker"/>
-
+        android:id="@+id/habit_to_mood"
+        android:title="@string/mood_tracker"/>
 </menu>

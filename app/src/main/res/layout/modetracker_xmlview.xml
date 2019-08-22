@@ -13,8 +13,9 @@
         android:background="@drawable/border_line"
         android:gravity="center_vertical"
         android:text="21/8"
+        android:textSize="15sp"
         android:textAlignment="center"
-        android:textSize="15sp" />
+       />
 
     <TextView
         android:id="@+id/first_view"
@@ -25,53 +26,59 @@
         android:clickable="true"
         android:gravity="center_vertical"
         android:textAlignment="center"
+        android:autoSizeTextType="uniform"
         android:textSize="15sp" />
 
     <TextView
-
+        android:id="@+id/second_view"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_weight="1.46"
         android:background="@drawable/border_line"
         android:gravity="center_vertical"
         android:textAlignment="center"
+        android:autoSizeTextType="uniform"
         android:textSize="15sp" />
 
     <TextView
-
+        android:id="@+id/third_view"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_weight="1.46"
         android:background="@drawable/border_line"
         android:gravity="center_vertical"
         android:textAlignment="center"
+        android:autoSizeTextType="uniform"
         android:textSize="15sp" />
 
     <TextView
-
+        android:id="@+id/four_view"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_weight="1.46"
         android:background="@drawable/border_line"
         android:gravity="center_vertical"
         android:textAlignment="center"
+        android:autoSizeTextType="uniform"
         android:textSize="15sp" />
 
     <TextView
-
+        android:id="@+id/five_view"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_weight="1.46"
         android:background="@drawable/border_line"
         android:gravity="center_vertical"
+        android:autoSizeTextType="uniform"
         android:textAlignment="center"
         android:textSize="15sp" />
 
     <TextView
-
+        android:id="@+id/six_view"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_weight="1.46"
+        android:autoSizeTextType="uniform"
         android:background="@drawable/border_line"
         android:gravity="center_vertical"
         android:textAlignment="center"

@@ -18,6 +18,8 @@
     <string name="MoviesLog">Movies to\nWatch</string>
     <string name="Bucketlog">Bucket\nlist</string>
     <string name="mood_tracker">Mood\ntracker</string>
+    <string name="habit_tracker">Habit\ntracker</string>
+    <string name="happy_lablebackground">happy</string>
 
 
     <string-array name="reminder_array">

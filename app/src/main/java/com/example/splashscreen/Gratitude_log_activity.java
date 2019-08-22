@@ -121,7 +121,12 @@ public class Gratitude_log_activity extends AppCompatActivity {
                             finish();
                         }
                         if (item.getItemId() == R.id.gratitude_to_mood) {
-                            Intent i = new Intent(Gratitude_log_activity.this, MoodTracker.class);
+                            Intent i = new Intent(Gratitude_log_activity.this, SelectMoods.class);
+                            startActivity(i);
+                            finish();
+                        }
+                        if (item.getItemId() == R.id.gratitude_to_habit) {
+                            Intent i = new Intent(Gratitude_log_activity.this, HabitTracker.class);
                             startActivity(i);
                             finish();
                         }

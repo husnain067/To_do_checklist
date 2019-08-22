@@ -101,7 +101,12 @@ public class MoviesToWatch extends AppCompatActivity {
                             finish();
                         }
                         if (item.getItemId() == R.id.movies_to_mood) {
-                            Intent i = new Intent(MoviesToWatch.this, MoodTracker.class);
+                            Intent i = new Intent(MoviesToWatch.this, SelectMoods.class);
+                            startActivity(i);
+                            finish();
+                        }
+                        if (item.getItemId() == R.id.mood_to_habit) {
+                            Intent i = new Intent(MoviesToWatch.this, HabitTracker.class);
                             startActivity(i);
                             finish();
                         }

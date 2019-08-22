@@ -3,8 +3,8 @@
 
 
     <item
-        android:id="@+id/two"
-        android:title="@string/weekly_activity_name"/>
+    android:id="@+id/two"
+    android:title="@string/weekly_activity_name"/>
     <item
         android:id="@+id/today_t0_gratiude"
         android:title="@string/grattitude_activity_name"/>
@@ -14,9 +14,9 @@
     <item
         android:id="@+id/today_t0_booksLog"
         android:title="@string/books_read_logs"/>
-   <item
-    android:id="@+id/today_t0_spendingLog"
-    android:title="@string/spending_log"/>
+    <item
+        android:id="@+id/today_t0_spendingLog"
+        android:title="@string/spending_log"/>
     <item
         android:id="@+id/today_to_movies"
         android:title="@string/MoviesLog"/>
@@ -26,5 +26,8 @@
     <item
         android:id="@+id/today_to_mood"
         android:title="@string/mood_tracker"/>
+    <item
+        android:id="@+id/today_to_habit"
+        android:title="@string/habit_tracker"/>
 
 </menu>

@@ -6,16 +6,21 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.splashscreen.Classes.MoodDetails;
+import com.example.splashscreen.utility.ClickListner;
 import com.example.splashscreen.utility.MoodLogRecycleView;
 import com.example.splashscreen.utility.OnSwipeTouchListener;
 
@@ -31,14 +36,19 @@ import java.util.TimeZone;
 public class MoodTracker extends AppCompatActivity {
     private ImageView menu_popup;
     private ConstraintLayout moodLayout;
+    private ImageView imageView;
     private Integer layoutDate = 0;
     private MoodLogRecycleView moodLogRecycleView;
     private ArrayList<MoodDetails> moodDetails = new ArrayList<>();
     private String startdate;
     private String enddate;
     DateFormat formatter;
+    private TextView firstView;
 
     private Date ebdDate;
+
+    int tenDays = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,18 +56,31 @@ public class MoodTracker extends AppCompatActivity {
         setContentView(R.layout.activity_mood_tracker);
         menu_popup = findViewById(R.id.mood_toOthers);
         moodLayout = findViewById(R.id.mood_layout);
-
+        firstView = findViewById(R.id.coloum1);
+        imageView = findViewById(R.id.select_moods);
 
         setMenu_popup();
         gestureOn_activity();
+        for (int i = 0; i < 10; i++) {
+            moodDetails.add(new MoodDetails(addOneDayCalendar(tenDays + i)));
 
-        startdate = getCurrentDate();
-        enddate = fetchNextDate(-10, startdate);
+        }
+        initRecycleView();
 
-        addToListView(enddate, startdate);
+        startdate = String.valueOf(moodDetails.get(0));
+        enddate = String.valueOf(moodDetails.get(9));
 
 
 //        Log.d("ADebugTag", "Value: " + addOneDayCalendar(-10));
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               Intent i = new Intent(MoodTracker.this,SelectMoods.class);
+               startActivity(i);
+               finish();
+
+            }
+        });
 
 
     }
@@ -125,6 +148,12 @@ public class MoodTracker extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         }
+                        if (item.getItemId() == R.id.mood_to_habit) {
+                            Intent i = new Intent(MoodTracker.this, HabitTracker.class);
+                            startActivity(i);
+                            finish();
+                        }
+
                         return true;
                     }
                 });
@@ -140,39 +169,38 @@ public class MoodTracker extends AppCompatActivity {
 
             public void onSwipeTop() {
                 Toast.makeText(MoodTracker.this, "up", Toast.LENGTH_SHORT).show();
-//                addToListView("10/08", "20/08");
-//                String start = String.valueOf(moodDetails.get(9));
-//                addToListView(start, fetchNextDate(-10, start));
-                addToListView(fetchNextDate(10, enddate), fetchNextDate(10, startdate));
+//
+                tenDays += 10;
 
-                int a=10;
+                moodDetails = new ArrayList<>();
+                for (int i = 0; i < 10; i++) {
+                    moodDetails.add(new MoodDetails(addOneDayCalendar(tenDays + i)));
 
+                }
+                initRecycleView();
             }
 
             public void onSwipeBottom() {
                 Toast.makeText(MoodTracker.this, "down", Toast.LENGTH_SHORT).show();
-                addToListView(fetchNextDate(-10, startdate), fetchNextDate(-10, enddate));
-                int b=10;
+
+                if ((tenDays - 10) < 0) {
+                    return;
+                }
+                tenDays -= 10;
+                moodDetails = new ArrayList<>();
+                for (int i = 0; i < 10; i++) {
+                    moodDetails.add(new MoodDetails(addOneDayCalendar(tenDays + i)));
+
+                }
+                initRecycleView();
 
             }
 
         });
     }
 
-    private void addToListView(String startDate, String endDate) {
-        moodDetails = new ArrayList<>();
 
-        List<Date> dates = getDates(startDate, endDate);for (Date date : dates) {
-
-            moodDetails.add(new MoodDetails(convertDateToString(date)));
-
-        }
-
-        initRecycleView();
-
-    }
-
-    private static String getCurrentDate() {
+    private String getCurrentDate() {
         String DATE_FORMAT_4 = "dd/MM";
         SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT_4);
         dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
@@ -180,7 +208,7 @@ public class MoodTracker extends AppCompatActivity {
         return dateFormat.format(today);
     }
 
-    private static String addOneDayCalendar(int i) {
+    private String addOneDayCalendar(int i) {
 
         String date = getCurrentDate();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM");
@@ -190,57 +218,10 @@ public class MoodTracker extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        c.add(Calendar.DATE, i);
-        return sdf.format(c.getTime());
-    }
-
-    private static String fetchNextDate(int i, String date) {
-
-//        String date = getCurrentDate();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM");
-        Calendar c = Calendar.getInstance();
-        try {
-            c.setTime(sdf.parse(date));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        c.add(Calendar.DATE, i);
+        c.add(Calendar.DATE, -i);
         return sdf.format(c.getTime());
     }
 
 
 
-    private static List<Date> getDates(String dateString1, String dateString2) {
-        ArrayList<Date> dates = new ArrayList<Date>();
-        DateFormat df1 = new SimpleDateFormat("dd/MM");
-
-        Date date1 = null;
-        Date date2 = null;
-
-        try {
-            date1 = df1.parse(dateString1);
-            date2 = df1.parse(dateString2);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        Calendar cal1 = Calendar.getInstance();
-        cal1.setTime(date1);
-
-
-        Calendar cal2 = Calendar.getInstance();
-        cal2.setTime(date2);
-
-        while (!cal1.after(cal2)) {
-            dates.add(cal1.getTime());
-            cal1.add(Calendar.DATE, 1);
-        }
-        return dates;
-    }
-
-    private static String convertDateToString(Date date) {
-        String DATE_FORMAT_4 = "dd/MM";
-        SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT_4);
-        return dateFormat.format(date);
-    }
 }

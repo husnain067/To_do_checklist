@@ -95,7 +95,12 @@ public class BucketList extends AppCompatActivity {
                             finish();
                         }
                         if (item.getItemId() == R.id.bucket_to_mood) {
-                            Intent i = new Intent(BucketList.this, MoodTracker.class);
+                            Intent i = new Intent(BucketList.this, SelectMoods.class);
+                            startActivity(i);
+                            finish();
+                        }
+                        if (item.getItemId() == R.id.bucket_to_habit) {
+                            Intent i = new Intent(BucketList.this, HabitTracker.class);
                             startActivity(i);
                             finish();
                         }
