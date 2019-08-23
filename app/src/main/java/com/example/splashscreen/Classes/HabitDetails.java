@@ -1,17 +1,17 @@
 package com.example.splashscreen.Classes;
 
 public class HabitDetails {
-    String date;
+   String habitName;
 
-    public HabitDetails(String date) {
-        this.date = date;
+    public HabitDetails(String habitName) {
+        this.habitName = habitName;
     }
 
-    public String getDate() {
-        return date;
+    public String getHabitName() {
+        return habitName;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setHabitName(String habitName) {
+        this.habitName = habitName;
     }
 }

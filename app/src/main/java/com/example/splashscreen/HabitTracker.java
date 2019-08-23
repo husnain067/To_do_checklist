@@ -2,6 +2,8 @@ package com.example.splashscreen;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -13,8 +15,11 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.splashscreen.Classes.HabitDetails;
 import com.example.splashscreen.Classes.MoodDetails;
+import com.example.splashscreen.utility.HabitLogRecycleView;
 import com.example.splashscreen.utility.OnSwipeTouchListener;
+import com.example.splashscreen.utility.RecycleAdapterView;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -26,6 +31,8 @@ import java.util.TimeZone;
 public class HabitTracker extends AppCompatActivity {
     private ImageView menu_popup;
     private ConstraintLayout habitLayout;
+    private HabitLogRecycleView habitLogRecycleView;
+    private ArrayList<HabitDetails> habitDetails = new ArrayList<>();
     Integer sevenDAys = 0;
     TextView[] labels = new TextView[8];
 
@@ -49,11 +56,28 @@ public class HabitTracker extends AppCompatActivity {
         setMenu_popup();
         gestureOn_activity();
         for (int i = 1; i <= 7; i++) {
-            labels[i].setText((addOneDayCalendar((sevenDAys + i-1))));
+            labels[i].setText((addOneDayCalendar((sevenDAys + i - 1))));
 
         }
 
+        habitDetails.add(new HabitDetails(""));
+        habitDetails.add(new HabitDetails(""));
+        habitDetails.add(new HabitDetails(""));
+        habitDetails.add(new HabitDetails(""));
+        habitDetails.add(new HabitDetails(""));
+        habitDetails.add(new HabitDetails(""));
+        habitDetails.add(new HabitDetails(""));
 
+        initRecycleView();
+
+    }
+
+    private void initRecycleView() {
+
+        RecyclerView recyclerView = findViewById(R.id.habit_recycle_view);
+        habitLogRecycleView = new HabitLogRecycleView(this, habitDetails);
+        recyclerView.setAdapter(habitLogRecycleView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     private void setMenu_popup() {
@@ -140,7 +164,8 @@ public class HabitTracker extends AppCompatActivity {
                 sevenDAys -= 7;
 
                 for (int i = 1; i <= 7; i++) {
-                    labels[i].setText((addOneDayCalendar((sevenDAys + i-1))));
+                    labels[i].setText((addOneDayCalendar((sevenDAys + i - 1))));
+                    initRecycleView();
 
                 }
             }
@@ -150,7 +175,8 @@ public class HabitTracker extends AppCompatActivity {
                 Toast.makeText(HabitTracker.this, "right", Toast.LENGTH_SHORT).show();
                 sevenDAys += 7;
                 for (int i = 1; i <= 7; i++) {
-                    labels[i].setText((addOneDayCalendar((sevenDAys + i-1))));
+                    labels[i].setText((addOneDayCalendar((sevenDAys + i - 1))));
+                    initRecycleView();
 
                 }
             }

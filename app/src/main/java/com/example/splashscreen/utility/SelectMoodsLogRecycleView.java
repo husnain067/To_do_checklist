@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -28,14 +29,17 @@ public class SelectMoodsLogRecycleView extends RecyclerView.Adapter<SelectMoodsL
     private static final String TAG = "RecyclerViewAdapter";
     private List<SelectMoodDetails> mSelectMood_details = new ArrayList<>();
     private final int TAG_ONLINE_ID = R.string.happy_lablebackground;
-
+    private List<String> moodsClick = new ArrayList<>();
+    MoodsClickListener moodsClickListener;
     private Context mContext;
 
 
-    public SelectMoodsLogRecycleView(Context context, List<SelectMoodDetails> mData) {
+    public SelectMoodsLogRecycleView(Context context, List<SelectMoodDetails> mData, MoodsClickListener mClickListener) {
         mContext = context;
         mSelectMood_details = mData;
         LayoutInflater inflater;
+        moodsClick = new ArrayList<>();
+        moodsClickListener = mClickListener;
     }
 
 
@@ -58,10 +62,25 @@ public class SelectMoodsLogRecycleView extends RecyclerView.Adapter<SelectMoodsL
 
         holder.cardView.setTag(TAG_ONLINE_ID, "");
         holder.cardView.setOnClickListener(view -> {
+
+
             if (TextUtils.isEmpty(holder.cardView.getTag(TAG_ONLINE_ID).toString())) {
+                if (moodsClick.size() >= 6) {
+                    Toast.makeText(mContext, "You can select only six moods", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                moodsClick.add(String.valueOf(holder.mMood_name.getText()));
+                if (moodsClickListener != null) {
+                    moodsClickListener.onListSelected(moodsClick);
+
+                }
+                holder.mMood_name.setTextColor(mContext.getColor(R.color.mdtp_white));
                 holder.cardView.setCardBackgroundColor((mContext.getColor(R.color.button)));
                 holder.cardView.setTag(TAG_ONLINE_ID, "WRITE");
             } else {
+                moodsClick.remove(holder.mMood_name.getText());
+                holder.mMood_name.setTextColor(mContext.getColor(R.color.mdtp_transparent_black));
                 holder.cardView.setCardBackgroundColor(mContext.getColor(R.color.mdtp_white));
                 holder.cardView.setTag(TAG_ONLINE_ID, "");
             }
@@ -86,5 +105,9 @@ public class SelectMoodsLogRecycleView extends RecyclerView.Adapter<SelectMoodsL
             cardView = itemView.findViewById(R.id.card_view_mood);
 
         }
+    }
+
+    public interface MoodsClickListener {
+        void onListSelected(List<String> mMoods_name);
     }
 }

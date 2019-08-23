@@ -49,7 +49,9 @@
         app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="@+id/toolbar2" />
 
+
     <LinearLayout
+        android:gravity="center"
         android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -60,80 +62,108 @@
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1.46"
+            android:layout_height="60dp"
+            android:layout_weight="1.42"
             android:background="@drawable/border_line"
             android:gravity="center_vertical"
             android:text="Mood"
             android:textAlignment="center"
-            android:textSize="15sp" />
+            android:layout_gravity="center"
+           android:textSize="15sp"/>
 
         <TextView
 
             android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1.46"
+            android:layout_height="60dp"
+            android:layout_weight="1.42"
             android:background="@drawable/border_line"
             android:gravity="center_vertical"
             android:text="Happy"
-            android:id="@+id/coloum1"
+            android:id="@+id/mood_1"
             android:textAlignment="center"
-            android:textSize="15sp" />
+            android:layout_gravity="center"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="12sp"
+            android:autoSizeMinTextSize="10sp"
+         />
 
         <TextView
 
             android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1.46"
+            android:layout_height="60dp"
+            android:layout_weight="1.42"
             android:background="@drawable/border_line"
             android:gravity="center_vertical"
             android:text="Angry"
+            android:id="@+id/mood_2"
+            android:layout_gravity="center"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="12sp"
+            android:autoSizeMinTextSize="10sp"
             android:textAlignment="center"
-            android:textSize="15sp" />
+           />
 
         <TextView
 
             android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1.46"
+            android:layout_height="60dp"
+            android:layout_weight="1.42"
+            android:id="@+id/mood_3"
             android:background="@drawable/border_line"
-            android:gravity="center_vertical"
             android:text="Tired"
+            android:gravity="center"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="12sp"
+            android:autoSizeMinTextSize="10sp"
             android:textAlignment="center"
-            android:textSize="15sp" />
+          />
 
         <TextView
 
             android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1.46"
+            android:layout_height="60dp"
+            android:layout_weight="1.42"
             android:background="@drawable/border_line"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:text="Sad"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="12sp"
+            android:autoSizeMinTextSize="10sp"
+            android:id="@+id/mood_4"
             android:textAlignment="center"
-            android:textSize="15sp" />
+
+          />
 
         <TextView
 
             android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1.46"
+            android:layout_height="60dp"
+            android:layout_weight="1.42"
             android:background="@drawable/border_line"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:text="Fearful"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="12sp"
+            android:autoSizeMinTextSize="10sp"
+            android:id="@+id/mood_5"
             android:textAlignment="center"
-            android:textSize="15sp" />
+
+            />
 
         <TextView
 
             android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1.46"
+            android:layout_height="60dp"
+            android:layout_weight="1.42"
             android:background="@drawable/border_line"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:text="Mellow"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="12sp"
+            android:autoSizeMinTextSize="10sp"
+            android:id="@+id/mood_6"
             android:textAlignment="center"
-            android:textSize="15sp" />
+         />
 
 
     </LinearLayout>

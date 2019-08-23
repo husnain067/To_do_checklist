@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -20,24 +21,22 @@ import com.example.splashscreen.utility.RecycleAdapterView;
 import com.example.splashscreen.utility.SelectMoodsLogRecycleView;
 import com.example.splashscreen.utility.Task_Details;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 public class SelectMoods extends AppCompatActivity {
     ActivitySelectMoodsBinding mBinding;
     private SelectMoodsLogRecycleView selectMoodsLogRecycleView;
     private ArrayList<SelectMoodDetails> selectMoodDetails = new ArrayList<>();
+     List<String> mMoodsNAme = new ArrayList<String>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_select_moods);
-        mBinding.submitMoodBT.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SelectMoods.this, MoodTracker.class);
-                startActivity(intent);
-            }
-        });
+
         setMenu_popup();
         initRecycleView();
 
@@ -128,7 +127,29 @@ public class SelectMoods extends AppCompatActivity {
     private void initRecycleView() {
 
         RecyclerView recyclerView = findViewById(R.id.name_recycle_view);
-        selectMoodsLogRecycleView = new SelectMoodsLogRecycleView(this, selectMoodDetails);
+        selectMoodsLogRecycleView = new SelectMoodsLogRecycleView(this, selectMoodDetails, new SelectMoodsLogRecycleView.MoodsClickListener() {
+            @Override
+            public void onListSelected(List<String> mMoods_name) {
+
+
+                mBinding.submitMoodBT.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        if (mMoods_name.size()<6) {
+                            Toast.makeText(SelectMoods.this, "please select atleast six Moods", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        Intent intent = new Intent(SelectMoods.this, MoodTracker.class);
+                        intent.putExtra("mylist", (Serializable) mMoods_name);
+
+                        startActivity(intent);
+                        finish();
+                    }
+                });
+
+            }
+        });
         recyclerView.setAdapter(selectMoodsLogRecycleView);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
 

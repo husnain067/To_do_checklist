@@ -6,24 +6,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
-import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.splashscreen.Classes.MoodDetails;
-import com.example.splashscreen.utility.ClickListner;
 import com.example.splashscreen.utility.MoodLogRecycleView;
 import com.example.splashscreen.utility.OnSwipeTouchListener;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -43,9 +39,9 @@ public class MoodTracker extends AppCompatActivity {
     private String startdate;
     private String enddate;
     DateFormat formatter;
-    private TextView firstView;
-
+    private TextView[] labels = new TextView[6];
     private Date ebdDate;
+    private List<String> set_moodsName = new ArrayList<>();
 
     int tenDays = 0;
 
@@ -56,13 +52,34 @@ public class MoodTracker extends AppCompatActivity {
         setContentView(R.layout.activity_mood_tracker);
         menu_popup = findViewById(R.id.mood_toOthers);
         moodLayout = findViewById(R.id.mood_layout);
-        firstView = findViewById(R.id.coloum1);
         imageView = findViewById(R.id.select_moods);
+        labels[0] = findViewById(R.id.mood_1);
+        labels[1] = findViewById(R.id.mood_2);
+        labels[2] = findViewById(R.id.mood_3);
+        labels[3] = findViewById(R.id.mood_4);
+        labels[4] = findViewById(R.id.mood_5);
+        labels[5] = findViewById(R.id.mood_6);
+
+        ArrayList<String> myList = (ArrayList<String>) getIntent().getSerializableExtra("mylist");
+
+
+for (int i=0; i<=5; i++){
+
+    labels[i].setText(myList.get(i));
+
+}
+
+
+
+        int a = 1;
 
         setMenu_popup();
         gestureOn_activity();
+
+
         for (int i = 0; i < 10; i++) {
             moodDetails.add(new MoodDetails(addOneDayCalendar(tenDays + i)));
+
 
         }
         initRecycleView();
@@ -75,9 +92,9 @@ public class MoodTracker extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent i = new Intent(MoodTracker.this,SelectMoods.class);
-               startActivity(i);
-               finish();
+                Intent i = new Intent(MoodTracker.this, SelectMoods.class);
+                startActivity(i);
+                finish();
 
             }
         });
@@ -221,7 +238,6 @@ public class MoodTracker extends AppCompatActivity {
         c.add(Calendar.DATE, -i);
         return sdf.format(c.getTime());
     }
-
 
 
 }
