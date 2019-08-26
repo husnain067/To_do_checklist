@@ -29,13 +29,13 @@
             android:layout_margin="5dp"
             android:text="By:" />
 
-        <EditText
+        <TextView
             android:id="@+id/author_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:textSize="12sp"
-            android:hint="AB" />
+            />
     </LinearLayout>
 
 
@@ -46,11 +46,11 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="70dp"
         android:hint="august 16,2019" />
-    <ImageView
+    <CheckBox
         android:id="@+id/image_box_book_log"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:src="@drawable/square"
+        android:buttonTint="@color/button"
         android:layout_gravity="bottom|right"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"

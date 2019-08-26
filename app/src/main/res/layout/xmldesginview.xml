@@ -29,6 +29,7 @@
 
             <CheckBox
                 android:id="@+id/pass_image"
+                android:buttonTint="@color/button"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
@@ -37,7 +38,6 @@
                 android:layout_marginLeft="10dp"
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
-                android:backgroundTint="@color/button"
                 android:scaleType="fitCenter"
                />
 

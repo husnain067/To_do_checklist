@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">Splash screen</string>
+    <string name="app_name">Marmalaed</string>
+    <string name="name">Marmalade</string>
     <string name="toolbar_text">Today\'s \nChecklist</string>
     <string name="xml_view">Task name</string>
     <string name="add_info">Extra Info</string>
@@ -37,5 +38,11 @@
         <item>Credit</item>
 
     </string-array>
+    <string name="facebook_application_id" translatable="false">889396404780923
+</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">889396404780923
+</string>
+
 
 </resources>
+

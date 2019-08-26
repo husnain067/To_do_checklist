@@ -65,10 +65,9 @@ public class Book_log_RecycleView extends RecyclerView.Adapter<Book_log_RecycleV
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView mBook_name;
-        EditText mAuthor_name;
+        TextView mAuthor_name;
         TextView mDate;
         CardView cardView;
-        ImageView imageView;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -78,7 +77,7 @@ public class Book_log_RecycleView extends RecyclerView.Adapter<Book_log_RecycleV
             mAuthor_name = itemView.findViewById(R.id.author_name);
             cardView = itemView.findViewById(R.id.recyleAdapter_bookLog);
             mDate = itemView.findViewById(R.id.book_date);
-            imageView = itemView.findViewById(R.id.image_box_book_log);
+
 
 
         }

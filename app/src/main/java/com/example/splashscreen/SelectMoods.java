@@ -84,8 +84,8 @@ public class SelectMoods extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         }
-                        if (item.getItemId() == R.id.movies_to_book_log) {
-                            Intent i = new Intent(SelectMoods.this, Daily_Thoughts.class);
+                        if (item.getItemId() == R.id.mood_to_book_log) {
+                            Intent i = new Intent(SelectMoods.this, Books_to_Read_Log.class);
                             startActivity(i);
                             finish();
                         }
@@ -111,6 +111,11 @@ public class SelectMoods extends AppCompatActivity {
                         }
                         if (item.getItemId() == R.id.mood_to_habit) {
                             Intent i = new Intent(SelectMoods.this, HabitTracker.class);
+                            startActivity(i);
+                            finish();
+                        }
+                        if (item.getItemId() == R.id.mood_to_Daily) {
+                            Intent i = new Intent(SelectMoods.this, Daily_Thoughts.class);
                             startActivity(i);
                             finish();
                         }

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
     android:layout_margin="10dp"
     android:background="@drawable/border_line"
     android:layout_height="wrap_content">
     <androidx.cardview.widget.CardView
-        android:id="@+id/recyleAdapter_bookLog"
-        android:background="@drawable/border_line"
-
         android:layout_width="120dp"
         android:layout_height="150dp">
         <TextView
@@ -18,16 +17,17 @@
             android:layout_margin="5dp"
             android:layout_marginLeft="10dp"
             android:text="Author:"/>
-        <ImageView
+
+        <CheckBox
             android:id="@+id/image_box_book_log"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/square"
             android:layout_gravity="bottom|right"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
-            />
+            android:buttonTint="@color/button" />
     </androidx.cardview.widget.CardView>
+
 
 
 

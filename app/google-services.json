@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "186009541644",
+    "firebase_url": "https://marmalade-e7a05.firebaseio.com",
+    "project_id": "marmalade-e7a05",
+    "storage_bucket": "marmalade-e7a05.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186009541644:android:ce73e01317b7aa49",
+        "android_client_info": {
+          "package_name": "com.example.splashscreen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "186009541644-4qcijatcof1qi4vudmid5h9jjvp8a5b0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.splashscreen",
+            "certificate_hash": "2460b9a80039bf97554eafc08b7ba1e3cadae892"
+          }
+        },
+        {
+          "client_id": "186009541644-us6k5lo1qupvgjae6ahovbed0srt3ong.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAk875QyKlhDnwBd66EC85KxlfXzzinMLc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "186009541644-us6k5lo1qupvgjae6ahovbed0srt3ong.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
