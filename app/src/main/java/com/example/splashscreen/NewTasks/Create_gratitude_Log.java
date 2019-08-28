@@ -1,4 +1,4 @@
-package com.example.splashscreen;
+package com.example.splashscreen.NewTasks;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.splashscreen.Gratitude_log_activity;
+import com.example.splashscreen.R;
 import com.example.splashscreen.utility.OnSwipeTouchListener;
 
 import java.text.ParseException;
@@ -65,7 +67,7 @@ public class Create_gratitude_Log extends AppCompatActivity {
         });
     }
 
-    public static String getCurrentDate() {
+    public  String getCurrentDate() {
         String DATE_FORMAT_4 = "MMMM dd, yyyy";
         SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT_4);
         dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
@@ -73,7 +75,7 @@ public class Create_gratitude_Log extends AppCompatActivity {
         return dateFormat.format(today);
     }
 
-    public static String addOneDayCalendar(int i) {
+    public  String addOneDayCalendar(int i) {
 
         String date = getCurrentDate();
         SimpleDateFormat sdf = new SimpleDateFormat("MMMM dd, yyyy");

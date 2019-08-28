@@ -1,21 +1,18 @@
-package com.example.splashscreen;
+package com.example.splashscreen.NewTasks;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.splashscreen.Books_to_Read_Log;
+import com.example.splashscreen.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -55,7 +52,7 @@ public class Create_new_Book_log extends AppCompatActivity {
         saveBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Create_new_Book_log.this,Books_to_Read_Log.class);
+                Intent i = new Intent(Create_new_Book_log.this, Books_to_Read_Log.class);
                 startActivity(i);
             }
         });
@@ -80,7 +77,7 @@ public class Create_new_Book_log extends AppCompatActivity {
 
     }
 
-    public static String getCurrentDate() {
+    public  String getCurrentDate() {
         String DATE_FORMAT_4 = "MMMM dd, yyyy";
         SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT_4);
         dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));

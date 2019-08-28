@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
+import com.example.splashscreen.Classes.Marmalade;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
 import com.firebase.ui.auth.util.ExtraConstants;
@@ -21,6 +23,8 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import lombok.val;
 
 public class LogInActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 1822;
@@ -37,23 +41,24 @@ public class LogInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
-        startActivityForResult(
-                AuthUI.getInstance()
-                        .createSignInIntentBuilder()
-                        .setAvailableProviders(providers)
-                        .setTosAndPrivacyPolicyUrls(
-                                "https://example.com/terms.html",
-                                "https://example.com/privacy.html")
-                        .build(),
-                RC_SIGN_IN);
-        AuthUI.getInstance()
-                .signOut(this)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    public void onComplete(@NonNull Task<Void> task) {
-                        // ...
-                    }
-                });
 
+
+        if (Marmalade.instance().getMAuth().getCurrentUser() != null) {
+            Intent i = new Intent(LogInActivity.this, TodysChecklit_Activity.class);
+            startActivity(i);
+            finish();
+
+        } else
+
+            startActivityForResult(
+                    AuthUI.getInstance()
+                            .createSignInIntentBuilder()
+                            .setAvailableProviders(providers)
+                            .setTosAndPrivacyPolicyUrls(
+                                    "https://example.com/terms.html",
+                                    "https://example.com/privacy.html")
+                            .build(),
+                    RC_SIGN_IN);
 
     }
 
@@ -65,11 +70,12 @@ public class LogInActivity extends AppCompatActivity {
         if (requestCode == RC_SIGN_IN) {
             IdpResponse response = IdpResponse.fromResultIntent(data);
 
+
             if (resultCode == RESULT_OK) {
                 // Successfully signed in
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-               Intent i = new Intent(LogInActivity.this,TodysChecklit_Activity.class);
-               startActivity(i);
+
+
                 // ...
             } else {
                 // Sign in failed. If response is null the user canceled the

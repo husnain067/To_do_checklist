@@ -1,7 +1,6 @@
 package com.example.splashscreen;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,12 +10,13 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.splashscreen.NewTasks.Add_New_Tasks;
 import com.example.splashscreen.utility.OnSwipeTouchListener;
 import com.example.splashscreen.utility.RecycleAdapterView;
 import com.example.splashscreen.utility.Task_Details;
@@ -28,7 +28,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
-import static com.example.splashscreen.Add_New_Tasks.priorty;
+import static com.example.splashscreen.NewTasks.Add_New_Tasks.priorty;
 
 
 public class TodysChecklit_Activity extends AppCompatActivity {
@@ -38,7 +38,7 @@ public class TodysChecklit_Activity extends AppCompatActivity {
     private ImageView new_TaskView;
     private String newString;
     private TextView dateView;
-    private ConstraintLayout layout;
+    private LinearLayout layout;
     private Integer layoutDate = 0;
     private ImageView button1;
 
@@ -186,6 +186,7 @@ public class TodysChecklit_Activity extends AppCompatActivity {
         return sdf.format(c.getTime());
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void gestureOn_activity() {
         layout.setOnTouchListener(new OnSwipeTouchListener(TodysChecklit_Activity.this) {
 

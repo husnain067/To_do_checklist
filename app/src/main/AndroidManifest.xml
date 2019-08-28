@@ -4,14 +4,16 @@
     package="com.example.splashscreen">
 
     <application
+        android:name=".Classes.Marmalade"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LogInActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".LogInActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".SelectMoods"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -22,16 +24,16 @@
             android:name=".MoodTracker"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".AddNewbucketLog"
+            android:name=".NewTasks.AddNewbucketLog"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".BucketList"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".AddNewSpendLog"
+            android:name=".NewTasks.AddNewSpendLog"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".CreateNewMovieLog"
+            android:name=".NewTasks.CreateNewMovieLog"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".MoviesToWatch"
@@ -40,7 +42,7 @@
             android:name=".Spending_Log"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".Create_new_Book_log"
+            android:name=".NewTasks.Create_new_Book_log"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Books_to_Read_Log"
@@ -49,19 +51,19 @@
             android:name=".Daily_Thoughts"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".Create_gratitude_Log"
+            android:name=".NewTasks.Create_gratitude_Log"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Gratitude_log_activity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".Add_new_Weekly_Tasks"
+            android:name=".NewTasks.Add_new_Weekly_Tasks"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".WeekCheck_list"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".Add_New_Tasks"
+            android:name=".NewTasks.Add_New_Tasks"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".TodysChecklit_Activity"

@@ -17,6 +17,7 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.splashscreen.NewTasks.Add_new_Weekly_Tasks;
 import com.example.splashscreen.utility.OnSwipeTouchListener;
 import com.example.splashscreen.utility.RecycleAdapterView;
 import com.example.splashscreen.utility.Task_Details;
@@ -28,7 +29,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
-import static com.example.splashscreen.Add_new_Weekly_Tasks.weekly_priorty;
+import static com.example.splashscreen.NewTasks.Add_new_Weekly_Tasks.weekly_priorty;
 
 
 public class WeekCheck_list extends AppCompatActivity {
@@ -211,7 +212,7 @@ public class WeekCheck_list extends AppCompatActivity {
 
     }
 
-    private static String getCurrentDate() {
+    private  String getCurrentDate() {
         String DATE_FORMAT_4 = "MMMM dd, yyyy";
         SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT_4);
         dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
@@ -219,7 +220,7 @@ public class WeekCheck_list extends AppCompatActivity {
         return dateFormat.format(today);
     }
 
-    private static String addOneDayCalendar(int i) {
+    private  String addOneDayCalendar(int i) {
 
         String date = getCurrentDate();
         SimpleDateFormat sdf = new SimpleDateFormat("MMMM dd, yyyy");

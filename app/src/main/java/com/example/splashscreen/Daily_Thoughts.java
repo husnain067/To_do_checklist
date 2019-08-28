@@ -3,6 +3,7 @@ package com.example.splashscreen;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -112,7 +113,7 @@ public class Daily_Thoughts extends AppCompatActivity {
         });
     }
 
-    public static String getCurrentDate() {
+    public  String getCurrentDate() {
         String DATE_FORMAT_4 = "MMMM dd, yyyy";
         SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT_4);
         dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
@@ -120,7 +121,7 @@ public class Daily_Thoughts extends AppCompatActivity {
         return dateFormat.format(today);
     }
 
-    public static String addOneDayCalendar(int i) {
+    public  String addOneDayCalendar(int i) {
 
         String date = getCurrentDate();
         SimpleDateFormat sdf = new SimpleDateFormat("MMMM dd, yyyy");
@@ -134,6 +135,7 @@ public class Daily_Thoughts extends AppCompatActivity {
         return sdf.format(c.getTime());
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void gestureOn_activity() {
         daily_thought_layout.setOnTouchListener(new OnSwipeTouchListener(Daily_Thoughts.this) {
 

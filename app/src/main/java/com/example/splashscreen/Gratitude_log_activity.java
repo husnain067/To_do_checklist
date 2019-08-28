@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import com.example.splashscreen.NewTasks.Create_gratitude_Log;
 import com.example.splashscreen.utility.ClickListner;
 import com.example.splashscreen.utility.Gratitude_recyclerView;
 
@@ -140,7 +141,7 @@ public class Gratitude_log_activity extends AppCompatActivity {
         });
     }
 
-    public static String getCurrentDate() {
+    public  String getCurrentDate() {
         String DATE_FORMAT_4 = "MMMM dd, yyyy";
         SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT_4);
         dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));

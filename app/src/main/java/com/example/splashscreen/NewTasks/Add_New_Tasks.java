@@ -1,7 +1,8 @@
-package com.example.splashscreen;
+package com.example.splashscreen.NewTasks;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +17,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.splashscreen.R;
+import com.example.splashscreen.TodysChecklit_Activity;
 import com.example.splashscreen.utility.Constants;
 
 import java.text.SimpleDateFormat;
@@ -23,21 +26,28 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
-public class Add_new_Weekly_Tasks extends AppCompatActivity {
-    private Button TimePicker_View;
-    private EditText add_newNotes;
-    private TextView setTime;
+
+
+
+public class Add_New_Tasks extends AppCompatActivity {
+   private Button TimePicker_View;
+    private  EditText add_newNotes;
+    private  TextView setTime;
     private TextView reminderSet;
     private Button submitBt;
     private LinearLayout reminderLayout;
     private TextView dateView;
-    public static int weekly_priorty;
+    public static int priorty;
 
-    private String newTask;
+
+   private String newTask;
+
+
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_new__weekly__tasks);
+        setContentView(R.layout.activity_add__new__tasks);
         add_newNotes = findViewById(R.id.add_notes);
         reminderSet = findViewById(R.id.reminder_timeView);
         submitBt = findViewById(R.id.submitBT);
@@ -59,16 +69,16 @@ public class Add_new_Weekly_Tasks extends AppCompatActivity {
 
                 newTask = add_newNotes.getText().toString();
                 if (TextUtils.isEmpty(newTask)) {
-                    Toast.makeText(Add_new_Weekly_Tasks.this, "Enter note first", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Add_New_Tasks.this, "Enter note first", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
 
-                Intent i = new Intent(Add_new_Weekly_Tasks.this, WeekCheck_list.class);
+                Intent i = new Intent(Add_New_Tasks.this, TodysChecklit_Activity.class);
 
                 //submit_challengeList = Collections.singletonList(newTask);
 
-                i.putExtra("string", newTask);
+                i.putExtra("STRING_I_NEED", newTask);
                 startActivity(i);
                 finish();
 
@@ -77,6 +87,8 @@ public class Add_new_Weekly_Tasks extends AppCompatActivity {
         reminder_spinner();
         priorty_spinner();
     }
+
+
     private void setTimePicker_View() {
         setTime.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +100,7 @@ public class Add_new_Weekly_Tasks extends AppCompatActivity {
                 int minute = mcurrentTime.get(Calendar.MINUTE);
 
                 TimePickerDialog mTimePicker;
-                mTimePicker = new TimePickerDialog(Add_new_Weekly_Tasks.this, R.style.datepicker, new TimePickerDialog.OnTimeSetListener() {
+                mTimePicker = new TimePickerDialog(Add_New_Tasks.this, R.style.datepicker, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                         // setTime.setText( selectedHour + ":" + selectedMinute + "PM");
@@ -124,7 +136,7 @@ public class Add_new_Weekly_Tasks extends AppCompatActivity {
                 int minute = mcurrentTime.get(Calendar.MINUTE);
 
                 TimePickerDialog mTimePicker;
-                mTimePicker = new TimePickerDialog(Add_new_Weekly_Tasks.this, R.style.datepicker, new TimePickerDialog.OnTimeSetListener() {
+                mTimePicker = new TimePickerDialog(Add_New_Tasks.this, R.style.datepicker, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                         // setTime.setText( selectedHour + ":" + selectedMinute + "PM");
@@ -187,14 +199,14 @@ public class Add_new_Weekly_Tasks extends AppCompatActivity {
                 switch (position) {
 
                     case 0:
-                        weekly_priorty = 0;
+                        priorty = 0;
                         break;
 
                     case 1:
-                        weekly_priorty = 1;
+                        priorty = 1;
                         break;
                     case 2:
-                        weekly_priorty = 2;
+                        priorty = 2;
                         break;
 
                 }
@@ -208,11 +220,13 @@ public class Add_new_Weekly_Tasks extends AppCompatActivity {
     }
 
 
-    public static String getCurrentDate() {
+    public  String getCurrentDate() {
         String DATE_FORMAT_4 = "MMMM dd, yyyy";
         SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT_4);
         dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
         Date today = Calendar.getInstance().getTime();
         return dateFormat.format(today);
     }
+
+
 }

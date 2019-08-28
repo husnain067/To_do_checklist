@@ -1,4 +1,4 @@
-package com.example.splashscreen;
+package com.example.splashscreen.NewTasks;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.splashscreen.R;
+import com.example.splashscreen.Spending_Log;
 
 public class AddNewSpendLog extends AppCompatActivity {
 private Button saveBt;
@@ -21,7 +24,7 @@ private Button saveBt;
         saveBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(AddNewSpendLog.this,Spending_Log.class);
+                Intent i = new Intent(AddNewSpendLog.this, Spending_Log.class);
                 startActivity(i);
                 finish();
             }

@@ -13,6 +13,7 @@ import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import com.example.splashscreen.Classes.MoviesDetails;
+import com.example.splashscreen.NewTasks.CreateNewMovieLog;
 import com.example.splashscreen.utility.MoviesLogRecycleView;
 
 import java.util.ArrayList;

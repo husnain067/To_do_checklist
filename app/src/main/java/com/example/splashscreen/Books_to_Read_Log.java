@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.splashscreen.Classes.BookLog_Details;
 import com.example.splashscreen.Classes.Finish_book_names;
+import com.example.splashscreen.NewTasks.Create_new_Book_log;
 import com.example.splashscreen.utility.Book_log_RecycleView;
 import com.example.splashscreen.utility.Finish_Book_log_RecycleView;
 
@@ -149,7 +150,7 @@ public class Books_to_Read_Log extends AppCompatActivity {
         });
     }
 
-    public static String getCurrentDate() {
+    public  String getCurrentDate() {
         String DATE_FORMAT_4 = "MMMM dd, yyyy";
         SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT_4);
         dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));

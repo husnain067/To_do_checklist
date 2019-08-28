@@ -1,4 +1,4 @@
-package com.example.splashscreen;
+package com.example.splashscreen.NewTasks;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
+
+import com.example.splashscreen.MoviesToWatch;
+import com.example.splashscreen.R;
 
 public class CreateNewMovieLog extends AppCompatActivity {
     private RatingBar mRatingBar;

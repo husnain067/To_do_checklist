@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/create_gratitude_layout"
-    tools:context=".NewTasks.Create_gratitude_Log">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.DailyThoughtsLog">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
@@ -16,7 +15,9 @@
         android:theme="?attr/actionBarTheme"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="2dp" />
+        tools:layout_editor_absoluteY="2dp"/>
+
+
 
     <TextView
         android:id="@+id/textView"
@@ -25,7 +26,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="8dp"
-        android:text="@string/grattitude_activity_name"
+        android:text="@string/daily_thought"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -33,11 +34,10 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="@+id/toolbar2" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="32dp"
@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar2">
 
         <TextView
-            android:id="@+id/date_view_editNote"
+            android:id="@+id/date_view_dailyThought"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="80dp"
@@ -59,50 +59,26 @@
             android:text="august 11,2019"
             android:textSize="20sp" />
 
-        <ImageView
-            android:id="@+id/edit_note_image"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:src="@drawable/edit" />
 
         <EditText
-            android:id="@+id/add_editNotes"
+            android:id="@+id/add_thoughts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="3dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="50dp"
-            android:layout_marginRight="3dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/border"
-            android:hint="Add notes here"
+            android:hint="Add thoughts here"
             android:inputType="textMultiLine"
             android:maxLines="20"
             android:padding="10dp"
             android:paddingLeft="5dp"
             android:textColor="#A6A6A6"
-            android:visibility="gone" />
+            android:visibility="visible"
+            />
 
 
     </androidx.cardview.widget.CardView>
-
-    <Button
-        android:id="@+id/save_note"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button"
-        android:text="save"
-        android:textColor="@android:color/white"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintVertical_bias="0.147" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

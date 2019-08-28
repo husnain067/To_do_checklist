@@ -63,12 +63,11 @@ public class MoodTracker extends AppCompatActivity {
         ArrayList<String> myList = (ArrayList<String>) getIntent().getSerializableExtra("mylist");
 
 
-for (int i=0; i<=5; i++){
+        for (int i = 0; i <= 5; i++) {
 
-    labels[i].setText(myList.get(i));
+            labels[i].setText(myList.get(i));
 
-}
-
+        }
 
 
         int a = 1;

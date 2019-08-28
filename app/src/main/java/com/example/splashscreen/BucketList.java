@@ -13,9 +13,8 @@ import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import com.example.splashscreen.Classes.BucketLog_Details;
-import com.example.splashscreen.Classes.SpendingLogDetails;
+import com.example.splashscreen.NewTasks.AddNewbucketLog;
 import com.example.splashscreen.utility.BucketlogRecycleView;
-import com.example.splashscreen.utility.SpendingLogRecycleView;
 
 import java.util.ArrayList;
 

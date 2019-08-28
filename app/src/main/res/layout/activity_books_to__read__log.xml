@@ -7,10 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".Books_to_Read_Log">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:stretchColumns="1">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -180,5 +177,5 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </TableLayout>
+
 </ScrollView>

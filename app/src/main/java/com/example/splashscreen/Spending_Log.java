@@ -1,7 +1,6 @@
 package com.example.splashscreen;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,9 +12,8 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
-import com.example.splashscreen.Classes.MoviesDetails;
 import com.example.splashscreen.Classes.SpendingLogDetails;
-import com.example.splashscreen.utility.MoviesLogRecycleView;
+import com.example.splashscreen.NewTasks.AddNewSpendLog;
 import com.example.splashscreen.utility.SpendingLogRecycleView;
 
 import java.util.ArrayList;

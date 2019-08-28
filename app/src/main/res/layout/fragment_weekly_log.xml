@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TodysChecklit_Activity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/weeklygesture"
+    tools:context=".Fragments.WeeklyLog">
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
@@ -17,17 +19,7 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="2dp" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="50dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar2"
-        app:layout_constraintVertical_bias="0.00999999"
-        app:srcCompat="@drawable/ic_more_vert_black_24dp"
-        tools:ignore="VectorDrawableCompat" />
+
 
     <TextView
         android:id="@+id/textView"
@@ -36,7 +28,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="8dp"
-        android:text="@string/toolbar_text"
+        android:text="@string/weekly_activity_name"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -68,23 +60,26 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.309" />
 
-
-    <LinearLayout
-        android:id="@+id/layout_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/calenderImage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2"
-        tools:layout_editor_absoluteX="0dp">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyleadapter"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="-16dp"
-            tools:layout_editor_absoluteY="301dp" />
+        app:srcCompat="@drawable/exclamation"
+        tools:ignore="VectorDrawableCompat" />
 
 
-    </LinearLayout>
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/weekly_recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/calenderImage"
+        tools:layout_editor_absoluteX="0dp"></androidx.recyclerview.widget.RecyclerView>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/newtask"
         android:layout_width="56dp"
@@ -99,5 +94,7 @@
         app:fabSize="auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
